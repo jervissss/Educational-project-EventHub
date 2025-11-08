@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333232;
+    font-family: Montserrat, sans-serif;
+    color: white;
+}
+
+/* ===== ШАПКА САЙТА ===== */
+header {
+    position: relative;
+    height: 665px;
+    padding-top: 30px;
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ОСНОВНОЙ КОНТЕЙНЕР - ИЗМЕНЕНИЯ ЗДЕСЬ */
+.header-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 50px; /* Этот отступ создает 50px слева и справа */
+    width: 100%; /* Занимает всю ширину */
+    /* Убираем max-width и margin: auto чтобы контейнер был на всю ширину */
+}
+
+/* ===== ЛОГОТИП - СЛЕВА С МАЛЕНЬКИМ ОТСТУПОМ ===== */
+.logo-container {
+    display: flex;
+    align-items: center;
+    /* Теперь логотип будет в 50px от левого края благодаря padding контейнера */
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-top, .logo-bottom {
+    font-weight: 400;
+    color: white;
+    font-size: 24px;
+}
+
+/* ===== НАВИГАЦИЯ - ЦЕНТР ===== */
+.nav {
+    display: flex;
+    gap: 10px;
+    background-color: rgba(51, 50, 50, 0.8);
+    border-radius: 45px;
+    padding: 5px;
+    border: 2px solid white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-but {
+    width: 150px;
+    height: 40px;
+    border-radius: 45px;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.nav-but:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-but.curr {
+    background-color: white;
+    color: #333232;
+}
+
+/* ===== КНОПКА РЕГИСТРАЦИИ - СПРАВА ===== */
+.register {
+    padding-right: 150px;
+    /* Кнопка будет в 50px от правого края благодаря padding контейнера */
+}
+
+.reg-button {
+    width: 200px;
+    height: 50px;
+    border-radius: 45px;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: white;
+    color: #333232;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.reg-button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+main {
+    padding: 50px 20px;
+}
+
+/* ===== ТЕКСТ НА БАННЕРЕ ===== */
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 140px;
+    transform: translateY(-50%);
+    z-index: 2;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: px;
+}
+
+.event {
+    font-size: 144px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
+.hub {
+    font-size: 144px;
+    font-weight: bold;
+    color: #4EE3C6;
+    margin-left: 90px;
+}
+
+/* ===== ПРАВЫЙ КОНТЕНТ НА БАННЕРЕ ===== */
+.banner-right-content {
+    position: absolute;
+    top: 50%;
+    right: 140px; /* Увеличили отступ в 2 раза */
+    transform: translateY(-50%);
+    z-index: 2;
+    text-align: center; /* Выравниваем текст по центру */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое по горизонтали */
+    max-width: 500px;
+}
+
+.banner-description {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.4;
+    margin-bottom: 30px;
+    font-family: Montserrat;
+    text-align: center; /* Центрируем текст внутри параграфа */
+}
+
+.book-button {
+    width: 200px;
+    height: 50px;
+    border-radius: 45px;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: white;
+    color: #333232;
+    border: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    /* Кнопка автоматически центрируется благодаря align-items: center в родителе */
+}
+
+.book-button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* ===== СТРЕЛКИ НА БАННЕРЕ ===== */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 60px; /* Оставляем прежний размер кружка */
+    height: 60px; /* Оставляем прежний размер кружка */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.arrow:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.left-arrow {
+    left: 24px;
+}
+
+.right-arrow {
+    right: 24px;
+}
+
+.arrow img {
+    width: 50px; /* Еще больше увеличиваем стрелки */
+    height: 50px; /* Еще больше увеличиваем стрелки */
+    filter: brightness(0) invert(1);
+}
+
+/* ===== ИНДИКАТОРЫ БАННЕРА ===== */
+.banner-indicators {
+    position: absolute;
+    bottom: 30px; /* Отступ от нижнего края баннера */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 15px; /* Расстояние между кружками */
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.5; /* Полупрозрачные по умолчанию */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    opacity: 1; /* Активный кружок - непрозрачный */
+}
+
+.indicator:hover {
+    opacity: 0.8; /* Эффект при наведении */
+}
+
+/* ===== АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ ===== */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .nav {
+        position: static;
+        transform: none;
+        left: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-but {
+        width: 120px;
+        font-size: 14px;
+    }
+    
+    header {
+        height: auto;
+        min-height: 500px;
+    }
+}
