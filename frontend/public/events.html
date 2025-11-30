@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог мероприятий - EventHub</title>
+    <link rel="stylesheet" href="../src/css/events.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <img src="../src/assets/images/content/BackBanner.png" alt="Banner" width="1920" height="665">
+        </div>
+        
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="../src/assets/images/logos/logo.png" alt="EventHub Logo" width="111px">
+                <div class="logo-text">
+                    <span class="logo-top">EVENT</span>
+                    <span class="logo-bottom">HUB</span>
+                </div> 
+            </div>
+            
+            <div class="nav">
+                <button class="nav-but" data-page="../index.html">Главная</button>
+                <button class="nav-but curr" data-page="events.html">Мероприятия</button>
+                <button class="nav-but" data-page="account.html">Кабинет</button>
+                <button class="nav-but" data-page="about.html">О нас</button>
+            </div>
+            
+            <div class="register">
+                <button class="reg-button">Зарегистрироваться</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="events-hero">
+            <div class="events-container">
+                <h1 class="events-title">КАТАЛОГ МЕРОПРИЯТИЙ</h1>
+                <p class="events-subtitle">Откройте для себя уникальные события вокруг вас</p>
+                
+                <div class="filters-section">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Поиск мероприятий..." class="search-input">
+                        <button class="search-button">
+                            <img src="../src/assets/icons/search.png" alt="Поиск" width="24" height="24">
+                        </button>
+                    </div>
+                    
+                    <div class="filter-tags">
+                        <button class="filter-tag active" data-category="all">Все</button>
+                        <button class="filter-tag" data-category="concert">Концерты</button>
+                        <button class="filter-tag" data-category="exhibition">Выставки</button>
+                        <button class="filter-tag" data-category="sport">Спорт</button>
+                        <button class="filter-tag" data-category="education">Образование</button>
+                        <button class="filter-tag" data-category="business">Бизнес</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="events-grid-section">
+            <div class="events-container">
+                <div class="events-grid" id="eventsGrid">
+                    <!-- Карточка мероприятия 1 -->
+                    <div class="event-card" data-category="concert">
+                        <div class="event-image">
+                            <img src="../src/assets/images/content/BackBanner.png" alt="Концерт классической музыки">
+                            <div class="event-date">
+                                <span class="date-day">15</span>
+                                <span class="date-month">Дек</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Концерт классической музыки</h3>
+                            <div class="event-info">
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/calendar.png" alt="Дата" width="16" height="16">
+                                    <span>15 декабря, 19:00</span>
+                                </div>
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/location.png" alt="Место" width="16" height="16">
+                                    <span>Концертный зал</span>
+                                </div>
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/price.png" alt="Цена" width="16" height="16">
+                                    <span>от 1500 ₽</span>
+                                </div>
+                            </div>
+                            <p class="event-description">
+                                Незабываемый вечер классической музыки в исполнении симфонического оркестра. 
+                                В программе произведения Моцарта, Бетховена и Чайковского.
+                            </p>
+                            <div class="event-actions">
+                                <button class="book-event-button">Забронировать</button>
+                                <button class="more-info-button">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка мероприятия 2 -->
+                    <div class="event-card" data-category="exhibition">
+                        <div class="event-image">
+                            <img src="../src/assets/images/content/BackBanner.png" alt="Выставка современного искусства">
+                            <div class="event-date">
+                                <span class="date-day">20</span>
+                                <span class="date-month">Дек</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Выставка современного искусства</h3>
+                            <div class="event-info">
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/calendar.png" alt="Дата" width="16" height="16">
+                                    <span>20-30 декабря</span>
+                                </div>
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/location.png" alt="Место" width="16" height="16">
+                                    <span>Галерея искусств</span>
+                                </div>
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/price.png" alt="Цена" width="16" height="16">
+                                    <span>500 ₽</span>
+                                </div>
+                            </div>
+                            <p class="event-description">
+                                Масштабная выставка современных художников. Инсталляции, 
+                                цифровое искусство и интерактивные экспонаты.
+                            </p>
+                            <div class="event-actions">
+                                <button class="book-event-button">Забронировать</button>
+                                <button class="more-info-button">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка мероприятия 3 -->
+                    <div class="event-card" data-category="business">
+                        <div class="event-image">
+                            <img src="../src/assets/images/content/BackBanner.png" alt="Бизнес-форум">
+                            <div class="event-date">
+                                <span class="date-day">10</span>
+                                <span class="date-month">Янв</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Бизнес-форум 2024</h3>
+                            <div class="event-info">
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/calendar.png" alt="Дата" width="16" height="16">
+                                    <span>10 января, 09:00</span>
+                                </div>
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/location.png" alt="Место" width="16" height="16">
+                                    <span>Бизнес-центр</span>
+                                </div>
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/price.png" alt="Цена" width="16" height="16">
+                                    <span>5000 ₽</span>
+                                </div>
+                            </div>
+                            <p class="event-description">
+                                Ежегодный бизнес-форум для предпринимателей и руководителей. 
+                                Нетворкинг, мастер-классы и выступления лидеров индустрии.
+                            </p>
+                            <div class="event-actions">
+                                <button class="book-event-button">Забронировать</button>
+                                <button class="more-info-button">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка мероприятия 4 -->
+                    <div class="event-card" data-category="education">
+                        <div class="event-image">
+                            <img src="../src/assets/images/content/BackBanner.png" alt="Мастер-класс по кулинарии">
+                            <div class="event-date">
+                                <span class="date-day">25</span>
+                                <span class="date-month">Дек</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Мастер-класс по кулинарии</h3>
+                            <div class="event-info">
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/calendar.png" alt="Дата" width="16" height="16">
+                                    <span>25 декабря, 18:00</span>
+                                </div>
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/location.png" alt="Место" width="16" height="16">
+                                    <span>Кулинарная студия</span>
+                                </div>
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/price.png" alt="Цена" width="16" height="16">
+                                    <span>2500 ₽</span>
+                                </div>
+                            </div>
+                            <p class="event-description">
+                                Научитесь готовить праздничные блюда от шеф-повара. 
+                                Практический мастер-класс с дегустацией.
+                            </p>
+                            <div class="event-actions">
+                                <button class="book-event-button">Забронировать</button>
+                                <button class="more-info-button">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка мероприятия 5 -->
+                    <div class="event-card" data-category="education">
+                        <div class="event-image">
+                            <img src="../src/assets/images/content/BackBanner.png" alt="Технологическая конференция">
+                            <div class="event-date">
+                                <span class="date-day">15</span>
+                                <span class="date-month">Янв</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Технологическая конференция</h3>
+                            <div class="event-info">
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/calendar.png" alt="Дата" width="16" height="16">
+                                    <span>15 января, 10:00</span>
+                                </div>
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/location.png" alt="Место" width="16" height="16">
+                                    <span>Технопарк</span>
+                                </div>
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/price.png" alt="Цена" width="16" height="16">
+                                    <span>3000 ₽</span>
+                                </div>
+                            </div>
+                            <p class="event-description">
+                                Конференция о будущем технологий. Искусственный интеллект, 
+                                блокчейн и инновационные стартапы.
+                            </p>
+                            <div class="event-actions">
+                                <button class="book-event-button">Забронировать</button>
+                                <button class="more-info-button">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка мероприятия 6 -->
+                    <div class="event-card" data-category="sport">
+                        <div class="event-image">
+                            <img src="../src/assets/images/content/BackBanner.png" alt="Спортивный марафон">
+                            <div class="event-date">
+                                <span class="date-day">08</span>
+                                <span class="date-month">Янв</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Спортивный марафон</h3>
+                            <div class="event-info">
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/calendar.png" alt="Дата" width="16" height="16">
+                                    <span>8 января, 08:00</span>
+                                </div>
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/location.png" alt="Место" width="16" height="16">
+                                    <span>Центральный парк</span>
+                                </div>
+                                <div class="info-item">
+                                    <img src="../src/assets/icons/price.png" alt="Цена" width="16" height="16">
+                                    <span>1000 ₽</span>
+                                </div>
+                            </div>
+                            <p class="event-description">
+                                Ежегодный благотворительный марафон. Дистанции 5км, 10км и 21км. 
+                                Для профессионалов и любителей.
+                            </p>
+                            <div class="event-actions">
+                                <button class="book-event-button">Забронировать</button>
+                                <button class="more-info-button">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="load-more-container">
+                    <button class="load-more-button" id="loadMoreButton">Показать еще</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Секция с логотипом -->
+    <section class="logo-line-section">
+        <div class="logo-line-container">
+            <div class="logo-line-image">
+                <img src="../src/assets/images/logos/logo.png" alt="EventHub Logo">
+            </div>
+            <div class="logo-line-text">EVENT HUB</div>
+        </div>
+    </section>
+
+    <script src="../src/js/events.js"></script>
+</body>
+</html>

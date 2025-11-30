@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - EventHub</title>
+    <link rel="stylesheet" href="../src/css/account.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <img src="../src/assets/images/content/BackBanner.png" alt="Banner" width="1920" height="665">
+        </div>
+        
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="../src/assets/images/logos/logo.png" alt="EventHub Logo" width="111px">
+                <div class="logo-text">
+                    <span class="logo-top">EVENT</span>
+                    <span class="logo-bottom">HUB</span>
+                </div> 
+            </div>
+            
+            <div class="nav">
+                <button class="nav-but" data-page="../index.html">Главная</button>
+                <button class="nav-but" data-page="events.html">Мероприятия</button>
+                <button class="nav-but curr" data-page="account.html">Кабинет</button>
+                <button class="nav-but" data-page="about.html">О нас</button>
+            </div>
+            
+            <div class="user-menu">
+                <div class="user-avatar">
+                    <img src="../src/assets/images/content/BackBanner.png" alt="Аватар пользователя">
+                </div>
+                <div class="user-name">Иван Иванов</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="account-hero">
+            <div class="account-container">
+                <h1 class="account-title">ЛИЧНЫЙ КАБИНЕТ</h1>
+                <p class="account-subtitle">Управляйте вашими мероприятиями и настройками</p>
+            </div>
+        </section>
+
+        <section class="account-content">
+            <div class="account-container">
+                <div class="account-layout">
+                    <!-- Боковое меню -->
+                    <aside class="sidebar">
+                        <nav class="sidebar-nav">
+                            <button class="nav-item active" data-tab="profile">
+                                <img src="../src/assets/icons/user.png" alt="Профиль" width="20" height="20">
+                                <span>Профиль</span>
+                            </button>
+                            <button class="nav-item" data-tab="events">
+                                <img src="../src/assets/icons/calendar.png" alt="Мероприятия" width="20" height="20">
+                                <span>Мои мероприятия</span>
+                            </button>
+                            <button class="nav-item" data-tab="tickets">
+                                <img src="../src/assets/icons/ticket.png" alt="Билеты" width="20" height="20">
+                                <span>Мои билеты</span>
+                            </button>
+                            <button class="nav-item" data-tab="settings">
+                                <img src="../src/assets/icons/settings.png" alt="Настройки" width="20" height="20">
+                                <span>Настройки</span>
+                            </button>
+                            <button class="nav-item" data-tab="create">
+                                <img src="../src/assets/icons/plus.png" alt="Создать" width="20" height="20">
+                                <span>Создать мероприятие</span>
+                            </button>
+                        </nav>
+
+                        <div class="sidebar-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">12</div>
+                                <div class="stat-label">Мероприятий</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">8</div>
+                                <div class="stat-label">Билетов</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">4</div>
+                                <div class="stat-label">Организаций</div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Основной контент -->
+                    <div class="main-content">
+                        <!-- Вкладка Профиль -->
+                        <div class="tab-content active" id="profile">
+                            <div class="profile-header">
+                                <div class="profile-avatar">
+                                    <img src="../src/assets/images/content/BackBanner.png" alt="Аватар">
+                                    <button class="edit-avatar-btn">
+                                        <img src="../src/assets/icons/edit.png" alt="Изменить" width="16" height="16">
+                                    </button>
+                                </div>
+                                <div class="profile-info">
+                                    <h2>Иван Иванов</h2>
+                                    <p>Участник с января 2024</p>
+                                    <div class="profile-rating">
+                                        <span class="rating-stars">★★★★★</span>
+                                        <span class="rating-text">5.0 (12 отзывов)</span>
+                                    </div>
+                                </div>
+                                <button class="edit-profile-btn">Редактировать профиль</button>
+                            </div>
+
+                            <div class="profile-details">
+                                <div class="detail-card">
+                                    <h3>Контактная информация</h3>
+                                    <div class="detail-item">
+                                        <label>Email:</label>
+                                        <span>ivan.ivanov@example.com</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Телефон:</label>
+                                        <span>+7 (999) 123-45-67</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Город:</label>
+                                        <span>Москва</span>
+                                    </div>
+                                </div>
+
+                                <div class="detail-card">
+                                    <h3>Предпочтения</h3>
+                                    <div class="preferences">
+                                        <span class="preference-tag">Концерты</span>
+                                        <span class="preference-tag">Выставки</span>
+                                        <span class="preference-tag">Спорт</span>
+                                        <span class="preference-tag">Образование</span>
+                                    </div>
+                                </div>
+
+                                <div class="detail-card">
+                                    <h3>Статистика</h3>
+                                    <div class="stats-grid">
+                                        <div class="mini-stat">
+                                            <div class="mini-stat-number">24</div>
+                                            <div class="mini-stat-label">Посещено мероприятий</div>
+                                        </div>
+                                        <div class="mini-stat">
+                                            <div class="mini-stat-number">18</div>
+                                            <div class="mini-stat-label">Куплено билетов</div>
+                                        </div>
+                                        <div class="mini-stat">
+                                            <div class="mini-stat-number">95%</div>
+                                            <div class="mini-stat-label">Процент посещаемости</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка Мои мероприятия -->
+                        <div class="tab-content" id="events">
+                            <div class="tab-header">
+                                <h2>Мои мероприятия</h2>
+                                <button class="create-event-btn">Создать мероприятие</button>
+                            </div>
+
+                            <div class="events-tabs">
+                                <button class="event-tab active" data-event-type="upcoming">Предстоящие</button>
+                                <button class="event-tab" data-event-type="past">Прошедшие</button>
+                                <button class="event-tab" data-event-type="drafts">Черновики</button>
+                            </div>
+
+                            <div class="events-list">
+                                <div class="event-item" data-event-type="upcoming">
+                                    <div class="event-image">
+                                        <img src="../src/assets/images/content/BackBanner.png" alt="Технологическая конференция">
+                                    </div>
+                                    <div class="event-details">
+                                        <h3>Технологическая конференция 2024</h3>
+                                        <div class="event-meta">
+                                            <span class="event-date">15 января, 10:00</span>
+                                            <span class="event-location">Технопарк, Москва</span>
+                                            <span class="event-status upcoming">Предстоящее</span>
+                                        </div>
+                                        <p>Конференция о будущем технологий с участием ведущих экспертов индустрии.</p>
+                                        <div class="event-actions">
+                                            <button class="action-btn edit">Редактировать</button>
+                                            <button class="action-btn stats">Статистика</button>
+                                            <button class="action-btn promote">Продвигать</button>
+                                        </div>
+                                    </div>
+                                    <div class="event-stats">
+                                        <div class="stat">
+                                            <div class="stat-value">156</div>
+                                            <div class="stat-label">Участников</div>
+                                        </div>
+                                        <div class="stat">
+                                            <div class="stat-value">24</div>
+                                            <div class="stat-label">Билетов продано</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="event-item" data-event-type="past">
+                                    <div class="event-image">
+                                        <img src="../src/assets/images/content/BackBanner.png" alt="Выставка искусства">
+                                    </div>
+                                    <div class="event-details">
+                                        <h3>Выставка современного искусства</h3>
+                                        <div class="event-meta">
+                                            <span class="event-date">20-30 декабря</span>
+                                            <span class="event-location">Галерея искусств, Москва</span>
+                                            <span class="event-status completed">Завершено</span>
+                                        </div>
+                                        <p>Масштабная выставка современных художников с интерактивными экспонатами.</p>
+                                        <div class="event-actions">
+                                            <button class="action-btn view">Просмотреть</button>
+                                            <button class="action-btn analytics">Аналитика</button>
+                                            <button class="action-btn duplicate">Дублировать</button>
+                                        </div>
+                                    </div>
+                                    <div class="event-stats">
+                                        <div class="stat">
+                                            <div class="stat-value">423</div>
+                                            <div class="stat-label">Посетителей</div>
+                                        </div>
+                                        <div class="stat">
+                                            <div class="stat-value">4.8</div>
+                                            <div class="stat-label">Рейтинг</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка Мои билеты -->
+                        <div class="tab-content" id="tickets">
+                            <div class="tab-header">
+                                <h2>Мои билеты</h2>
+                                <button class="download-all-btn">Скачать все</button>
+                            </div>
+
+                            <div class="tickets-filter">
+                                <button class="filter-btn active" data-ticket-filter="all">Все билеты</button>
+                                <button class="filter-btn" data-ticket-filter="active">Активные</button>
+                                <button class="filter-btn" data-ticket-filter="used">Использованные</button>
+                                <button class="filter-btn" data-ticket-filter="cancelled">Отмененные</button>
+                            </div>
+
+                            <div class="tickets-list">
+                                <div class="ticket-card active" data-ticket-status="active">
+                                    <div class="ticket-header">
+                                        <h3>Концерт классической музыки</h3>
+                                        <span class="ticket-status active">Активен</span>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div class="ticket-details">
+                                            <div class="detail">
+                                                <label>Дата:</label>
+                                                <span>15 декабря, 19:00</span>
+                                            </div>
+                                            <div class="detail">
+                                                <label>Место:</label>
+                                                <span>Концертный зал, Москва</span>
+                                            </div>
+                                            <div class="detail">
+                                                <label>Место:</label>
+                                                <span>Ряд 5, Место 12</span>
+                                            </div>
+                                            <div class="detail">
+                                                <label>Цена:</label>
+                                                <span>1500 ₽</span>
+                                            </div>
+                                        </div>
+                                        <div class="ticket-qr">
+                                            <div class="qr-placeholder">QR-CODE</div>
+                                            <div class="ticket-id">#TKT-2024-001234</div>
+                                        </div>
+                                    </div>
+                                    <div class="ticket-actions">
+                                        <button class="ticket-btn download">Скачать билет</button>
+                                        <button class="ticket-btn transfer">Передать</button>
+                                        <button class="ticket-btn cancel">Отменить</button>
+                                    </div>
+                                </div>
+
+                                <div class="ticket-card used" data-ticket-status="used">
+                                    <div class="ticket-header">
+                                        <h3>Выставка современного искусства</h3>
+                                        <span class="ticket-status used">Использован</span>
+                                    </div>
+                                    <div class="ticket-info">
+                                        <div class="ticket-details">
+                                            <div class="detail">
+                                                <label>Дата:</label>
+                                                <span>25 декабря, 14:00</span>
+                                            </div>
+                                            <div class="detail">
+                                                <label>Место:</label>
+                                                <span>Галерея искусств, Москва</span>
+                                            </div>
+                                            <div class="detail">
+                                                <label>Цена:</label>
+                                                <span>500 ₽</span>
+                                            </div>
+                                        </div>
+                                        <div class="ticket-qr">
+                                            <div class="qr-placeholder used">QR-CODE</div>
+                                            <div class="ticket-id">#TKT-2024-001235</div>
+                                        </div>
+                                    </div>
+                                    <div class="ticket-actions">
+                                        <button class="ticket-btn receipt">Чек</button>
+                                        <button class="ticket-btn review">Оставить отзыв</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка Настройки -->
+                        <div class="tab-content" id="settings">
+                            <div class="tab-header">
+                                <h2>Настройки аккаунта</h2>
+                            </div>
+
+                            <div class="settings-sections">
+                                <div class="settings-section">
+                                    <h3>Безопасность</h3>
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Смена пароля</h4>
+                                            <p>Обновите ваш пароль для защиты аккаунта</p>
+                                        </div>
+                                        <button class="setting-btn change-password">Изменить</button>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Двухфакторная аутентификация</h4>
+                                            <p>Дополнительная защита вашего аккаунта</p>
+                                        </div>
+                                        <button class="setting-btn enable-2fa">Включить</button>
+                                    </div>
+                                </div>
+
+                                <div class="settings-section">
+                                    <h3>Уведомления</h3>
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Email уведомления</h4>
+                                            <p>Получать уведомления о новых мероприятиях</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="email-notifications" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>SMS уведомления</h4>
+                                            <p>Уведомления о бронированиях и изменениях</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="sms-notifications">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="settings-section">
+                                    <h3>Приватность</h3>
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>Публичный профиль</h4>
+                                            <p>Разрешить другим пользователям видеть ваш профиль</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="public-profile" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <h4>История мероприятий</h4>
+                                            <p>Показывать посещенные мероприятия</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="event-history" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Вкладка Создать мероприятие -->
+                        <div class="tab-content" id="create">
+                            <div class="tab-header">
+                                <h2>Создать мероприятие</h2>
+                            </div>
+
+                            <form class="create-event-form" id="createEventForm">
+                                <div class="form-section">
+                                    <h3>Основная информация</h3>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="event-title">Название мероприятия *</label>
+                                            <input type="text" id="event-title" placeholder="Введите название" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="event-category">Категория *</label>
+                                            <select id="event-category" required>
+                                                <option value="">Выберите категорию</option>
+                                                <option value="concert">Концерт</option>
+                                                <option value="exhibition">Выставка</option>
+                                                <option value="sport">Спорт</option>
+                                                <option value="education">Образование</option>
+                                                <option value="business">Бизнес</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="event-description">Описание мероприятия *</label>
+                                        <textarea id="event-description" placeholder="Опишите ваше мероприятие..." rows="4" required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <h3>Дата и место</h3>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="event-date">Дата начала *</label>
+                                            <input type="date" id="event-date" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="event-time">Время начала *</label>
+                                            <input type="time" id="event-time" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="event-city">Город *</label>
+                                            <input type="text" id="event-city" placeholder="Город проведения" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="event-location">Место проведения *</label>
+                                            <input type="text" id="event-location" placeholder="Адрес или название места" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <h3>Билеты</h3>
+                                    <div class="ticket-types" id="ticketTypes">
+                                        <div class="ticket-type">
+                                            <div class="ticket-type-header">
+                                                <h4>Стандартный билет</h4>
+                                                <button type="button" class="remove-ticket">×</button>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label>Цена (₽) *</label>
+                                                    <input type="number" class="ticket-price" placeholder="1000" value="1000" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Количество *</label>
+                                                    <input type="number" class="ticket-quantity" placeholder="100" value="100" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="add-ticket-type" id="addTicketType">+ Добавить тип билета</button>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="button" class="save-draft-btn">Сохранить черновик</button>
+                                    <button type="submit" class="publish-event-btn">Опубликовать мероприятие</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Секция с логотипом -->
+    <section class="logo-line-section">
+        <div class="logo-line-container">
+            <div class="logo-line-image">
+                <img src="../src/assets/images/logos/logo.png" alt="EventHub Logo">
+            </div>
+            <div class="logo-line-text">EVENT HUB</div>
+        </div>
+    </section>
+
+    <script src="../src/js/account.js"></script>
+</body>
+</html>
