@@ -5,9 +5,54 @@
 }
 
 body {
-    background-color: #333232;
+    background-color: #1D1D1D;
     font-family: Montserrat, sans-serif;
     color: white;
+    overflow-x: hidden;
+}
+
+/* ===== АНИМАЦИИ ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(255, 255, 255, 0.4);
+    }
 }
 
 /* ===== ШАПКА САЙТА ===== */
@@ -30,50 +75,63 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
 }
 
-/* ОСНОВНОЙ КОНТЕЙНЕР - ИЗМЕНЕНИЯ ЗДЕСЬ */
+/* ОСНОВНОЙ КОНТЕЙНЕР */
 .header-content {
     position: relative;
     z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 50px; /* Этот отступ создает 50px слева и справа */
-    width: 100%; /* Занимает всю ширину */
-    /* Убираем max-width и margin: auto чтобы контейнер был на всю ширину */
+    padding: 30px 50px;
+    width: 100%;
 }
 
-/* ===== ЛОГОТИП - СЛЕВА С МАЛЕНЬКИМ ОТСТУПОМ ===== */
+/* ===== ЛОГОТИП ===== */
 .logo-container {
     display: flex;
     align-items: center;
-    /* Теперь логотип будет в 50px от левого края благодаря padding контейнера */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+    transform: scale(1.05);
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
     line-height: 1;
+    margin-left: 15px;
 }
 
 .logo-top, .logo-bottom {
     font-weight: 400;
     color: white;
     font-size: 24px;
+    transition: color 0.3s ease;
 }
 
-/* ===== НАВИГАЦИЯ - ЦЕНТР ===== */
+.logo-container:hover .logo-top,
+.logo-container:hover .logo-bottom {
+    color: #4EE3C6;
+}
+
+/* ===== НАВИГАЦИЯ ===== */
 .nav {
     display: flex;
     gap: 10px;
-    background-color: rgba(51, 50, 50, 0.8);
+    background-color: rgba(51, 50, 50, 0.9);
     border-radius: 45px;
     padding: 5px;
     border: 2px solid white;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    backdrop-filter: blur(10px);
 }
 
 .nav-but {
@@ -88,21 +146,40 @@ header {
     background-color: transparent;
     border: none;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-but::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.nav-but:hover::before {
+    left: 100%;
 }
 
 .nav-but:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
 }
 
 .nav-but.curr {
     background-color: white;
     color: #333232;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    animation: pulse 2s infinite;
 }
 
-/* ===== КНОПКА РЕГИСТРАЦИИ - СПРАВА ===== */
+/* ===== КНОПКА РЕГИСТРАЦИИ ===== */
 .register {
     padding-right: 150px;
-    /* Кнопка будет в 50px от правого края благодаря padding контейнера */
 }
 
 .reg-button {
@@ -117,16 +194,37 @@ header {
     color: #333232;
     border: none;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.reg-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(78, 227, 198, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.reg-button:hover::before {
+    left: 100%;
 }
 
 .reg-button:hover {
     background-color: #f0f0f0;
-    transform: scale(1.05);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.3);
 }
 
 /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
 main {
-    padding: 50px 20px;
+    padding: 0;
+    position: relative;
+    width: 100%;
 }
 
 /* ===== ТЕКСТ НА БАННЕРЕ ===== */
@@ -138,7 +236,7 @@ main {
     z-index: 2;
     text-transform: uppercase;
     line-height: 1;
-    letter-spacing: px;
+    animation: slideIn 1s ease-out;
 }
 
 .event {
@@ -146,6 +244,8 @@ main {
     font-weight: bold;
     color: white;
     margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
 }
 
 .hub {
@@ -153,29 +253,42 @@ main {
     font-weight: bold;
     color: #4EE3C6;
     margin-left: 90px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.banner-text:hover .event {
+    transform: translateX(-5px);
+}
+
+.banner-text:hover .hub {
+    transform: translateX(5px);
+    color: #3bc9ad;
 }
 
 /* ===== ПРАВЫЙ КОНТЕНТ НА БАННЕРЕ ===== */
 .banner-right-content {
     position: absolute;
     top: 50%;
-    right: 140px; /* Увеличили отступ в 2 раза */
+    right: 140px;
     transform: translateY(-50%);
     z-index: 2;
-    text-align: center; /* Выравниваем текст по центру */
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрируем содержимое по горизонтали */
+    align-items: center;
     max-width: 500px;
+    animation: slideIn 1s ease-out 0.2s both;
 }
 
 .banner-description {
     font-size: 24px;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.4;
     margin-bottom: 30px;
     font-family: Montserrat;
-    text-align: center; /* Центрируем текст внутри параграфа */
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .book-button {
@@ -191,12 +304,30 @@ main {
     border: none;
     transition: all 0.3s ease;
     font-size: 16px;
-    /* Кнопка автоматически центрируется благодаря align-items: center в родителе */
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.book-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(78, 227, 198, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.book-button:hover::before {
+    left: 100%;
 }
 
 .book-button:hover {
     background-color: #f0f0f0;
-    transform: scale(1.05);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.3);
 }
 
 /* ===== СТРЕЛКИ НА БАННЕРЕ ===== */
@@ -205,22 +336,23 @@ main {
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25);
     border: none;
     border-radius: 50%;
-    width: 60px; /* Оставляем прежний размер кружка */
-    height: 60px; /* Оставляем прежний размер кружка */
+    width: 60px;
+    height: 60px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
 }
 
 .arrow:hover {
     background: rgba(255, 255, 255, 0.4);
     transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
 }
 
 .left-arrow {
@@ -232,20 +364,25 @@ main {
 }
 
 .arrow img {
-    width: 50px; /* Еще больше увеличиваем стрелки */
-    height: 50px; /* Еще больше увеличиваем стрелки */
+    width: 50px;
+    height: 50px;
     filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.arrow:hover img {
+    transform: scale(1.1);
 }
 
 /* ===== ИНДИКАТОРЫ БАННЕРА ===== */
 .banner-indicators {
     position: absolute;
-    bottom: 30px; /* Отступ от нижнего края баннера */
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
     display: flex;
-    gap: 15px; /* Расстояние между кружками */
+    gap: 15px;
 }
 
 .indicator {
@@ -253,21 +390,418 @@ main {
     height: 12px;
     border-radius: 50%;
     background-color: white;
-    opacity: 0.5; /* Полупрозрачные по умолчанию */
+    opacity: 0.5;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .indicator.active {
-    opacity: 1; /* Активный кружок - непрозрачный */
+    opacity: 1;
+    transform: scale(1.2);
+    animation: glow 2s infinite;
 }
 
 .indicator:hover {
-    opacity: 0.8; /* Эффект при наведении */
+    opacity: 0.8;
+    transform: scale(1.1);
 }
 
-/* ===== АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ ===== */
+/* ===== СЕРЫЙ БЛОК ПОСЛЕ БАННЕРА ===== */
+.content-section {
+    background-color: #333232;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    margin-top: 5px;
+    position: relative;
+    z-index: 1;
+    min-height: calc(2 * (100vh - 665px));
+    width: 100%;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    color: white;
+    width: 100%;
+}
+
+/* ===== СТИЛИ ДЛЯ СЕКЦИИ "О НАС" ===== */
+.about-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 32px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.about-description {
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    max-width: 981px;
+    margin: 0 auto;
+    padding: 0 20px;
+    animation: fadeInUp 0.8s ease 0.5s both;
+}
+
+/* ===== ОБЕРТКА ДЛЯ ЗВЕЗД И ТЕКСТА ===== */
+.stars-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* ===== СТИЛИ ДЛЯ ЗВЕЗД ===== */
+.star {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    top: 50%;
+    transform: translateY(-50%);
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.3));
+    animation: fadeInUp 1s ease 0.7s both;
+}
+
+.left-star {
+    left: -200px;
+    transform: translateY(-50%) rotate(-30deg);
+}
+
+.right-star {
+    right: -200px;
+    transform: translateY(-50%) rotate(30deg);
+}
+
+/* Эффект при наведении на звезды */
+.star:hover {
+    transform: translateY(-50%) scale(1.1) rotate(var(--rotation, 0deg));
+    filter: drop-shadow(0 6px 20px rgba(78, 227, 198, 0.4));
+}
+
+.left-star:hover {
+    transform: translateY(-50%) scale(1.1) rotate(-30deg);
+}
+
+.right-star:hover {
+    transform: translateY(-50%) scale(1.1) rotate(30deg);
+}
+
+/* ===== КОНТЕЙНЕР ДЛЯ ТЕКСТА ===== */
+.about-content {
+    max-width: 800px;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 0;
+}
+
+/* ===== НАКЛОННЫЕ ПОЛОСЫ ===== */
+.diagonal-stripes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    z-index: 2;
+    overflow: visible;
+}
+
+.stripe {
+    position: absolute;
+    width: 120%;
+    height: auto;
+    aspect-ratio: 1920 / 144;
+    object-fit: cover;
+    left: -10%;
+    transform-origin: bottom center;
+}
+
+.stripe-1 {
+    transform: rotate(3deg) scale(0.6);
+    bottom: 0;
+    filter: brightness(0.8);
+    z-index: 1;
+}
+
+.stripe-2 {
+    transform: rotate(-2deg) scale(0.6);
+    bottom: -20px;
+    z-index: 2;
+}
+
+/* ===== СЕКЦИЯ ПРОЕКТЫ ===== */
+.projects-section {
+    background-color: #1D1D1D;
+    padding: 80px 0;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.projects-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 32px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 59px;
+    letter-spacing: 2px;
+    animation: fadeInUp 0.8s ease both;
+}
+
+/* Контейнер для карточек */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 75px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    max-width: 1400px;
+    scrollbar-width: none;
+}
+
+.projects-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Стили карточки */
+.project-card {
+    width: 400px;
+    height: 510px;
+    background-color: #333232;
+    border-radius: 45px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Верхняя часть с изображением (2/5 высоты) */
+.card-image {
+    height: 204px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+/* Нижняя часть с текстом */
+.card-content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.card-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: #4EE3C6;
+    color: #1D1D1D;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(78, 227, 198, 0.3);
+}
+
+.card-description {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+}
+
+/* ===== ЛОГОТИП В ПОДВАЛЕ ===== */
+.logo-line-section {
+    background-color: #333232;
+    height: 93px;
+    margin-top: 91px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-line-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo-line-container:hover {
+    transform: scale(1.05);
+}
+
+.logo-line-image img {
+    width: 111px;
+    height: 62px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-line-image:hover img {
+    transform: scale(1.1);
+}
+
+.logo-line-text {
+    font-family: Montserrat;
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1390px) {
+    .projects-container {
+        justify-content: flex-start;
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .banner-text {
+        left: 80px;
+    }
+    
+    .banner-right-content {
+        right: 80px;
+        max-width: 400px;
+    }
+    
+    .event, .hub {
+        font-size: 120px;
+    }
+    
+    .stars-wrapper {
+        min-height: 180px;
+    }
+    
+    .star {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .left-star {
+        left: -150px;
+    }
+    
+    .right-star {
+        right: -150px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-content {
+        padding: 30px 30px;
+    }
+    
+    .register {
+        padding-right: 50px;
+    }
+    
+    .banner-text {
+        left: 50px;
+    }
+    
+    .banner-right-content {
+        right: 50px;
+        max-width: 350px;
+    }
+    
+    .event, .hub {
+        font-size: 100px;
+    }
+    
+    .hub {
+        margin-left: 60px;
+    }
+    
+    .banner-description {
+        font-size: 20px;
+    }
+    
+    .about-description {
+        font-size: 24px;
+    }
+    
+    .projects-container {
+        gap: 50px;
+    }
+}
+
 @media (max-width: 768px) {
+    header {
+        height: 600px;
+        padding-top: 20px;
+    }
+    
     .header-content {
         flex-direction: column;
         gap: 20px;
@@ -277,18 +811,182 @@ main {
     .nav {
         position: static;
         transform: none;
-        left: auto;
-        flex-wrap: wrap;
+        order: 3;
+        width: 100%;
         justify-content: center;
     }
     
+    .register {
+        padding-right: 0;
+        order: 2;
+    }
+    
+    .banner-text {
+        position: static;
+        transform: none;
+        text-align: center;
+        margin-top: 100px;
+    }
+    
+    .event, .hub {
+        font-size: 80px;
+        display: inline-block;
+    }
+    
+    .hub {
+        margin-left: 20px;
+    }
+    
+    .banner-right-content {
+        position: static;
+        transform: none;
+        margin: 30px auto;
+        max-width: 90%;
+    }
+    
+    .arrow {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .arrow img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .left-arrow {
+        left: 10px;
+    }
+    
+    .right-arrow {
+        right: 10px;
+    }
+    
+    .content-section {
+        min-height: auto;
+        padding-bottom: 50px;
+    }
+    
+    .stars-wrapper {
+        flex-direction: column;
+        min-height: auto;
+        gap: 30px;
+    }
+    
+    .star {
+        position: static;
+        width: 120px;
+        height: 120px;
+        transform: none !important;
+        margin: 0 auto;
+    }
+    
+    .left-star, .right-star {
+        position: static;
+        transform: none !important;
+    }
+    
+    .about-content {
+        order: -1;
+    }
+    
+    .about-description {
+        font-size: 20px;
+    }
+    
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        overflow-x: visible;
+        padding: 0 20px;
+    }
+    
+    .project-card {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .projects-title {
+        margin-bottom: 40px;
+    }
+    
+    .content-container {
+        padding: 50px 20px;
+    }
+    
+    .logo-line-section {
+        margin-top: 60px;
+        height: 80px;
+    }
+    
+    .logo-line-text {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
     .nav-but {
         width: 120px;
         font-size: 14px;
     }
     
-    header {
-        height: auto;
-        min-height: 500px;
+    .reg-button, .book-button {
+        width: 180px;
+        height: 45px;
+    }
+    
+    .event, .hub {
+        font-size: 60px;
+    }
+    
+    .banner-description {
+        font-size: 18px;
+    }
+    
+    .about-title, .projects-title {
+        font-size: 28px;
+    }
+    
+    .about-description {
+        font-size: 18px;
+    }
+    
+    .card-title {
+        font-size: 24px;
+    }
+    
+    .tag {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+    
+    .card-description {
+        font-size: 16px;
+    }
+    
+    .logo-line-text {
+        font-size: 20px;
+    }
+    
+    .logo-line-image img {
+        width: 90px;
+        height: 50px;
+    }
+}
+
+/* ===== УЛУЧШЕННАЯ ПЛАВНОСТЬ ===== */
+* {
+    scroll-behavior: smooth;
+}
+
+/* ===== ОПТИМИЗАЦИЯ ДЛЯ МОБИЛЬНЫХ ===== */
+@media (max-width: 480px) {
+    .project-card, .event-card {
+        transition: all 0.3s ease;
+    }
+    
+    .project-card:active, .event-card:active {
+        transform: scale(0.98);
     }
 }

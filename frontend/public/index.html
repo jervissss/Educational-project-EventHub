@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>EventHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub - Главная</title>
     <link rel="stylesheet" href="../src/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="banner">
             <img src="../src/assets/images/content/BackBanner.png" alt="Banner" width="1920" height="665">
         </div>
+        
         <!-- Стрелки на баннере -->
-<button class="arrow left-arrow">
-    <img src="../src/assets/icons/left-arrow.png" alt="Предыдущее">
-</button>
-<button class="arrow right-arrow">
-    <img src="../src/assets/icons/right-arrow.png" alt="Следующее">
-</button>
+        <button class="arrow left-arrow">
+            <img src="../src/assets/icons/left-arrow.png" alt="Предыдущее">
+        </button>
+        <button class="arrow right-arrow">
+            <img src="../src/assets/icons/right-arrow.png" alt="Следующее">
+        </button>
 
-<!-- Индикаторы баннера -->
-<div class="banner-indicators">
-    <div class="indicator active"></div>
-    <div class="indicator"></div>
-    <div class="indicator"></div>
-    <div class="indicator"></div>
-</div>
+        <!-- Индикаторы баннера -->
+        <div class="banner-indicators">
+            <div class="indicator active"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
         
         <!-- Текст слева на баннере -->
         <div class="banner-text">
@@ -48,10 +51,10 @@
             </div>
             
             <div class="nav">
-                <button class="nav-but curr">Главная</button>
-                <button class="nav-but">Мероприятия</button>
-                <button class="nav-but">Кабинет</button>
-                <button class="nav-but">О нас</button>
+                <button class="nav-but curr" data-page="index.html">Главная</button>
+                <button class="nav-but" data-page="events.html">Мероприятия</button>
+                <button class="nav-but" data-page="account.html">Кабинет</button>
+                <button class="nav-but" data-page="about.html">О нас</button>
             </div>
             
             <div class="register">
@@ -61,11 +64,104 @@
     </header>
     
     <main>
-        <!-- Основной контент страницы будет здесь -->
+        <section class="content-section">
+            <div class="content-container">
+                <h2 class="about-title">О НАС</h2>
+                <div class="stars-wrapper">
+                    <img src="../src/assets/images/decorations/star1.png" alt="Звезда слева" class="star left-star">
+                    <div class="about-content">
+                        <p class="about-description">Откройте для себя лучшие мероприятия вокруг! Создавайте, продвигайте и продавайте билеты на ваши события с EventHub</p>
+                    </div>
+                    <img src="../src/assets/images/decorations/star2.png" alt="Звезда справа" class="star right-star">
+                </div>
+            </div>
+
+            <!-- Наклонные полосы ВНУТРИ серой секции -->
+            <div class="diagonal-stripes">
+                <img src="../src/assets/images/decorations/frame.png" class="stripe stripe-1" alt="">
+                <img src="../src/assets/images/decorations/frame.png" class="stripe stripe-2" alt="">
+            </div>
+        </section>
     </main>
     
-    <footer>
-        <!-- Подвал сайта -->
-    </footer>
+    <!-- Секция ПРОЕКТЫ -->
+    <section class="projects-section">
+        <div class="content-container">
+            <h2 class="projects-title">ПРОЕКТЫ</h2>
+        </div>
+        <div class="projects-container">
+            <!-- Карточка 1 -->
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="../src/assets/images/content/BackBanner.png" alt="Проект 1">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Название проекта</h3>
+                        <div class="card-tags">
+                            <span class="tag">#тег</span>
+                            <span class="tag">#тег</span>
+                        </div>
+                        <p class="card-description">
+                            Откройте для себя лучшие мероприятия вокруг!<br>
+                            Создавайте, продвигайте и продавайте билеты на ваши события с EventHub
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="../src/assets/images/content/BackBanner.png" alt="Проект 2">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Название проекта</h3>
+                        <div class="card-tags">
+                            <span class="tag">#тег</span>
+                            <span class="tag">#тег</span>
+                        </div>
+                        <p class="card-description">
+                            Откройте для себя лучшие мероприятия вокруг!<br>
+                            Создавайте, продвигайте и продавайте билеты на ваши события с EventHub
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="../src/assets/images/content/BackBanner.png" alt="Проект 3">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Название проекта</h3>
+                        <div class="card-tags">
+                            <span class="tag">#тег</span>
+                            <span class="tag">#тег</span>
+                        </div>
+                        <p class="card-description">
+                            Откройте для себя лучшие мероприятия вокруг!<br>
+                            Создавайте, продвигайте и продавайте билеты на ваши события с EventHub
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Новая секция с логотипом -->
+    <section class="logo-line-section">
+        <div class="logo-line-container">
+            <div class="logo-line-image">
+                <img src="../src/assets/images/logos/logo.png" alt="EventHub Logo">
+            </div>
+            <div class="logo-line-text">EVENT HUB</div>
+        </div>
+    </section>
+
+    <script src="../src/js/main.js"></script>
 </body>
 </html>
