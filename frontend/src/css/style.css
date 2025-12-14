@@ -717,6 +717,21 @@ main {
     text-transform: uppercase;
 }
 
+/* В разделе навигации, добавьте медиа-запрос для поддержки 5 кнопок: */
+@media (max-width: 1200px) {
+    .nav {
+        width: 90%;
+        overflow-x: auto;
+        padding: 5px 10px;
+    }
+    
+    .nav-but {
+        min-width: 140px;
+        width: auto;
+        flex-shrink: 0;
+    }
+}
+
 /* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 1390px) {
     .projects-container {

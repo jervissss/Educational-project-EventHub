@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Сообщество EventHub - объединяем людей через общие события и интересы">
+    <title>Сообщество - EventHub</title>
+    <link rel="stylesheet" href="../src/css/community.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../src/assets/images/logos/logo.png" type="image/png">
+</head>
+<body>
+    <header role="banner">
+        <div class="banner">
+            <img src="../src/assets/images/content/BackBanner.png" alt="Сообщество EventHub - люди общаются на мероприятии" width="1920" height="665">
+        </div>
+        
+        <div class="header-content">
+            <div class="logo-container" role="link" tabindex="0" aria-label="Вернуться на главную страницу EventHub">
+                <img src="../src/assets/images/logos/logo.png" alt="Логотип EventHub" width="111" height="62">
+                <div class="logo-text">
+                    <span class="logo-top">EVENT</span>
+                    <span class="logo-bottom">HUB</span>
+                </div> 
+            </div>
+            
+            <nav class="nav" role="navigation" aria-label="Основная навигация">
+                <a href="../index.html" class="nav-but">Главная</a>
+                <a href="events.html" class="nav-but">Мероприятия</a>
+                <a href="account.html" class="nav-but">Кабинет</a>
+                <a href="community.html" class="nav-but curr" aria-current="page">Сообщество</a>
+                <a href="about.html" class="nav-but">О нас</a>
+            </nav>
+            
+            <div class="register">
+                <button class="reg-button" aria-label="Зарегистрироваться в EventHub">Зарегистрироваться</button>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        <section class="community-hero" aria-labelledby="community-title">
+            <div class="community-container">
+                <h1 id="community-title" class="community-title">СООБЩЕСТВО EVENTHUB</h1>
+                <p class="community-subtitle">Объединяем людей через общие события и интересы</p>
+                
+                <div class="hero-stats" role="region" aria-label="Статистика сообщества">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="10000" aria-live="polite">0</div>
+                        <div class="stat-label">Активных участников</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="500" aria-live="polite">0</div>
+                        <div class="stat-label">Комьюнити</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="5000" aria-live="polite">0</div>
+                        <div class="stat-label">Успешных знакомств</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="98" aria-live="polite">0</div>
+                        <div class="stat-label">% довольных участников</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section" aria-labelledby="features-title">
+            <div class="community-container">
+                <h2 id="features-title" class="section-title">Уникальные возможности сообщества</h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🤝</div>
+                        <h3>Интеллектуальный нетворкинг</h3>
+                        <p>Система автоматически подбирает участников с похожими интересами на основе посещенных мероприятий. Знакомьтесь с единомышленниками до, во время и после событий.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">💬</div>
+                        <h3>Живые ленты мероприятий</h3>
+                        <p>Каждое событие имеет свою ленту для общения. Делитесь впечатлениями, задавайте вопросы организаторам, планируйте встречи с другими участниками.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">🗺️</div>
+                        <h3>Карта интересов</h3>
+                        <p>Визуализируйте вашу историю участия в мероприятиях. Отслеживайте эволюцию ваших интересов и открывайте новые направления для развития.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="networking-section" aria-labelledby="networking-title">
+            <div class="community-container">
+                <div class="section-header">
+                    <h2 id="networking-title">Найдите единомышленников</h2>
+                    <p>Система подберет для вас наиболее подходящих участников на основе ваших интересов</p>
+                </div>
+                
+                <div class="interests-filter" role="group" aria-label="Фильтр по интересам">
+                    <button class="interest-tag active" aria-pressed="true">Все</button>
+                    <button class="interest-tag" aria-pressed="false">Концерты</button>
+                    <button class="interest-tag" aria-pressed="false">Выставки</button>
+                    <button class="interest-tag" aria-pressed="false">Спорт</button>
+                    <button class="interest-tag" aria-pressed="false">Образование</button>
+                    <button class="interest-tag" aria-pressed="false">Бизнес</button>
+                    <button class="interest-tag" aria-pressed="false">Технологии</button>
+                    <button class="interest-tag" aria-pressed="false">Искусство</button>
+                    <button class="interest-tag" aria-pressed="false">Путешествия</button>
+                </div>
+
+                <div class="matching-stats">
+                    <div class="match-card">
+                        <div class="match-percentage" aria-live="polite">85%</div>
+                        <div class="match-label">совпадение интересов</div>
+                    </div>
+                    <div class="match-info">
+                        <p>На основе ваших 12 посещенных мероприятий мы нашли 24 человека с похожими интересами</p>
+                    </div>
+                </div>
+
+                <div class="people-grid" id="peopleGrid">
+                    <article class="person-card">
+                        <div class="person-avatar">
+                            <img src="../src/assets/images/avatars/avatar1.jpg" alt="Фотография Марии С." loading="lazy">
+                        </div>
+                        <div class="person-info">
+                            <h3>Мария С.</h3>
+                            <div class="person-tags">
+                                <span class="person-tag">Концерты</span>
+                                <span class="person-tag">Искусство</span>
+                                <span class="person-tag">Выставки</span>
+                            </div>
+                            <div class="common-events">
+                                <span class="event-match">3 общих мероприятия</span>
+                            </div>
+                            <p class="person-bio">Посетили вместе выставку современного искусства и концерт классической музыки</p>
+                            <button class="connect-btn" aria-label="Написать сообщение Марии">Написать сообщение</button>
+                        </div>
+                        <div class="match-score">
+                            <div class="score-circle" role="status" aria-label="Совпадение интересов 92%">
+                                <span>92%</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="person-card">
+                        <div class="person-avatar">
+                            <img src="../src/assets/images/avatars/avatar2.jpg" alt="Фотография Алексея П." loading="lazy">
+                        </div>
+                        <div class="person-info">
+                            <h3>Алексей П.</h3>
+                            <div class="person-tags">
+                                <span class="person-tag">Технологии</span>
+                                <span class="person-tag">Бизнес</span>
+                                <span class="person-tag">Образование</span>
+                            </div>
+                            <div class="common-events">
+                                <span class="event-match">2 общих мероприятия</span>
+                            </div>
+                            <p class="person-bio">Участвовали в одной технологической конференции и бизнес-форуме</p>
+                            <button class="connect-btn" aria-label="Написать сообщение Алексею">Написать сообщение</button>
+                        </div>
+                        <div class="match-score">
+                            <div class="score-circle" role="status" aria-label="Совпадение интересов 87%">
+                                <span>87%</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="person-card">
+                        <div class="person-avatar">
+                            <img src="../src/assets/images/avatars/avatar3.jpg" alt="Фотография Дмитрия К." loading="lazy">
+                        </div>
+                        <div class="person-info">
+                            <h3>Дмитрий К.</h3>
+                            <div class="person-tags">
+                                <span class="person-tag">Спорт</span>
+                                <span class="person-tag">Путешествия</span>
+                            </div>
+                            <div class="common-events">
+                                <span class="event-match">1 общее мероприятие</span>
+                            </div>
+                            <p class="person-bio">Бежали в одном марафоне. Обсуждали тренировки и планы на будущие забеги</p>
+                            <button class="connect-btn" aria-label="Написать сообщение Дмитрию">Написать сообщение</button>
+                        </div>
+                        <div class="match-score">
+                            <div class="score-circle" role="status" aria-label="Совпадение интересов 79%">
+                                <span>79%</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="activity-feeds-section" aria-labelledby="activity-title">
+            <div class="community-container">
+                <h2 id="activity-title" class="section-title">Живые ленты ваших мероприятий</h2>
+                
+                <div class="feeds-tabs" role="tablist" aria-label="Фильтр лент мероприятий">
+                    <button class="feed-tab active" data-feed="all" role="tab" aria-selected="true" aria-controls="all-feeds">Все ленты</button>
+                    <button class="feed-tab" data-feed="upcoming" role="tab" aria-selected="false" aria-controls="upcoming-feeds">Предстоящие</button>
+                    <button class="feed-tab" data-feed="active" role="tab" aria-selected="false" aria-controls="active-feeds">Активные</button>
+                    <button class="feed-tab" data-feed="past" role="tab" aria-selected="false" aria-controls="past-feeds">Архив</button>
+                </div>
+
+                <div class="feeds-container">
+                    <article class="event-feed active" id="all-feeds" role="tabpanel" aria-labelledby="all-feeds-tab">
+                        <div class="feed-header">
+                            <div class="feed-event-info">
+                                <h3>Технологическая конференция 2024</h3>
+                                <div class="feed-meta">
+                                    <span class="feed-date">15 января, 10:00</span>
+                                    <span class="feed-location">Технопарк, Москва</span>
+                                    <span class="feed-members">156 участников</span>
+                                </div>
+                            </div>
+                            <button class="join-feed-btn" aria-label="Присоединиться к обсуждению конференции">Присоединиться к обсуждению</button>
+                        </div>
+
+                        <div class="feed-content">
+                            <div class="feed-message">
+                                <div class="message-avatar">
+                                    <img src="../src/assets/images/avatars/avatar4.jpg" alt="Аватар Алексея Петрова" loading="lazy">
+                                </div>
+                                <div class="message-content">
+                                    <div class="message-header">
+                                        <span class="message-author">Алексей Петров</span>
+                                        <span class="message-time">2 часа назад</span>
+                                    </div>
+                                    <p class="message-text">Кто еще едет из центра? Может, организоваться и поехать вместе?</p>
+                                    <div class="message-actions">
+                                        <button class="message-action like" aria-label="Поставить лайк сообщению">👍 <span class="like-count">5</span></button>
+                                        <button class="message-action reply" aria-label="Ответить на сообщение">Ответить</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="feed-message">
+                                <div class="message-avatar">
+                                    <img src="../src/assets/images/avatars/avatar5.jpg" alt="Аватар Марии Сидоровой" loading="lazy">
+                                </div>
+                                <div class="message-content">
+                                    <div class="message-header">
+                                        <span class="message-author">Мария Сидорова</span>
+                                        <span class="message-time">1 час назад</span>
+                                    </div>
+                                    <p class="message-text">Буду на станции в 9:30. Кто со мной?</p>
+                                    <div class="message-reply">
+                                        <span class="reply-author">Иван Иванов:</span>
+                                        <span class="reply-text">Я тоже буду там, встречаемся у выхода?</span>
+                                    </div>
+                                    <div class="message-actions">
+                                        <button class="message-action like" aria-label="Поставить лайк сообщению">👍 <span class="like-count">3</span></button>
+                                        <button class="message-action reply" aria-label="Ответить на сообщение">Ответить</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="new-message-box">
+                                <label for="message-input" class="visually-hidden">Напишите сообщение</label>
+                                <textarea id="message-input" placeholder="Напишите сообщение для участников мероприятия..." rows="2" aria-label="Поле для ввода сообщения"></textarea>
+                                <button class="send-message-btn" aria-label="Отправить сообщение">Отправить</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="event-feed" id="upcoming-feeds" role="tabpanel" aria-labelledby="upcoming-feeds-tab" hidden>
+                        <div class="feed-header">
+                            <div class="feed-event-info">
+                                <h3>Концерт классической музыки</h3>
+                                <div class="feed-meta">
+                                    <span class="feed-date">15 декабря, 19:00</span>
+                                    <span class="feed-location">Концертный зал, Москва</span>
+                                    <span class="feed-members">89 участников</span>
+                                </div>
+                            </div>
+                            <button class="join-feed-btn" aria-label="Присоединиться к обсуждению концерта">Присоединиться к обсуждению</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="interests-timeline-section" aria-labelledby="timeline-title">
+            <div class="community-container">
+                <div class="section-header">
+                    <h2 id="timeline-title">Ваша карта интересов</h2>
+                    <p>Визуализация вашего путешествия по миру мероприятий</p>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-nav">
+                        <button class="timeline-nav-btn prev" aria-label="Предыдущий период">←</button>
+                        <div class="timeline-period" aria-live="polite">2024</div>
+                        <button class="timeline-nav-btn next" aria-label="Следующий период">→</button>
+                    </div>
+
+                    <div class="timeline-visualization">
+                        <div class="timeline-node active" data-month="янв" role="button" tabindex="0" aria-label="Январь: 2 мероприятия">
+                            <div class="node-circle"></div>
+                            <div class="node-content">
+                                <h4>Концерты</h4>
+                                <p>2 мероприятия</p>
+                            </div>
+                        </div>
+                        <div class="timeline-node" data-month="фев" role="button" tabindex="0" aria-label="Февраль: 1 мероприятие">
+                            <div class="node-circle"></div>
+                            <div class="node-content">
+                                <h4>Выставки</h4>
+                                <p>1 мероприятие</p>
+                            </div>
+                        </div>
+                        <div class="timeline-node" data-month="мар" role="button" tabindex="0" aria-label="Март: 3 мероприятия">
+                            <div class="node-circle"></div>
+                            <div class="node-content">
+                                <h4>Спорт</h4>
+                                <p>3 мероприятия</p>
+                            </div>
+                        </div>
+                        <div class="timeline-node" data-month="апр" role="button" tabindex="0" aria-label="Апрель: 2 мероприятия">
+                            <div class="node-circle"></div>
+                            <div class="node-content">
+                                <h4>Технологии</h4>
+                                <p>2 мероприятия</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="interests-stats">
+                        <div class="interest-stat">
+                            <div class="stat-value" aria-live="polite">24</div>
+                            <div class="stat-label">Всего мероприятий</div>
+                        </div>
+                        <div class="interest-stat">
+                            <div class="stat-value" aria-live="polite">8</div>
+                            <div class="stat-label">Разных категорий</div>
+                        </div>
+                        <div class="interest-stat">
+                            <div class="stat-value" aria-live="polite">18</div>
+                            <div class="stat-label">Новых знакомств</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recommendations-box">
+                    <h3>На основе ваших интересов мы рекомендуем:</h3>
+                    <div class="recommendations-list">
+                        <div class="recommendation" role="article">
+                            <span class="rec-category" aria-label="Категория: Фотография">Фотография</span>
+                            <span class="rec-event">Мастер-класс по портретной съемке</span>
+                        </div>
+                        <div class="recommendation" role="article">
+                            <span class="rec-category" aria-label="Категория: Дизайн">Дизайн</span>
+                            <span class="rec-event">Выставка современного дизайна</span>
+                        </div>
+                        <div class="recommendation" role="article">
+                            <span class="rec-category" aria-label="Категория: Технологии">Технологии</span>
+                            <span class="rec-event">Встреча IT-сообщества</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="communities-section" aria-labelledby="communities-title">
+            <div class="community-container">
+                <h2 id="communities-title" class="section-title">Тематические комьюнити</h2>
+                
+                <div class="communities-grid">
+                    <article class="community-card">
+                        <div class="community-header">
+                            <h3>Технологии и IT</h3>
+                            <span class="member-count" aria-live="polite">1,234 участника</span>
+                        </div>
+                        <div class="community-tags">
+                            <span class="community-tag">Конференции</span>
+                            <span class="community-tag">Хакатоны</span>
+                            <span class="community-tag">Встречи</span>
+                        </div>
+                        <p class="community-description">Обсуждаем последние тренды, делимся опытом и находим партнеров для проектов</p>
+                        <div class="community-activity">
+                            <span class="activity">12 новых сообщений сегодня</span>
+                        </div>
+                        <button class="join-community-btn" aria-label="Вступить в сообщество Технологии и IT">Вступить</button>
+                    </article>
+
+                    <article class="community-card">
+                        <div class="community-header">
+                            <h3>Искусство и культура</h3>
+                            <span class="member-count" aria-live="polite">856 участников</span>
+                        </div>
+                        <div class="community-tags">
+                            <span class="community-tag">Выставки</span>
+                            <span class="community-tag">Концерты</span>
+                            <span class="community-tag">Театры</span>
+                        </div>
+                        <p class="community-description">Обсуждаем выставки, делимся впечатлениями от концертов и находим компанию для походов в театр</p>
+                        <div class="community-activity">
+                            <span class="activity">8 новых сообщений сегодня</span>
+                        </div>
+                        <button class="join-community-btn" aria-label="Вступить в сообщество Искусство и культура">Вступить</button>
+                    </article>
+
+                    <article class="community-card">
+                        <div class="community-header">
+                            <h3>Спорт и активный отдых</h3>
+                            <span class="member-count" aria-live="polite">1,542 участника</span>
+                        </div>
+                        <div class="community-tags">
+                            <span class="community-tag">Марафоны</span>
+                            <span class="community-tag">Тренировки</span>
+                            <span class="community-tag">Походы</span>
+                        </div>
+                        <p class="community-description">Ищем партнеров для тренировок, обсуждаем соревнования и планируем спортивные мероприятия</p>
+                        <div class="community-activity">
+                            <span class="activity">21 новое сообщение сегодня</span>
+                        </div>
+                        <button class="join-community-btn" aria-label="Вступить в сообщество Спорт и активный отдых">Вступить</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="logo-line-section" role="contentinfo">
+        <div class="logo-line-container" role="link" tabindex="0" aria-label="Вернуться на главную страницу EventHub">
+            <div class="logo-line-image">
+                <img src="../src/assets/images/logos/logo.png" alt="Логотип EventHub">
+            </div>
+            <div class="logo-line-text">EVENT HUB</div>
+        </div>
+    </footer>
+
+    <script src="../src/js/community.js"></script>
+</body>
+</html>

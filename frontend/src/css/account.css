@@ -1800,6 +1800,21 @@ input:checked + .slider:before {
     }
 }
 
+/* Добавьте в конец файла, перед адаптивностью: */
+@media (max-width: 1300px) {
+    .nav {
+        width: 90%;
+        overflow-x: auto;
+        padding: 5px 10px;
+    }
+    
+    .nav-but {
+        min-width: 140px;
+        width: auto;
+        flex-shrink: 0;
+    }
+}
+
 /* ===== УЛУЧШЕННАЯ ПЛАВНОСТЬ ===== */
 * {
     scroll-behavior: smooth;
