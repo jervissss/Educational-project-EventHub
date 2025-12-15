@@ -61,6 +61,8 @@ class AccountPage {
             window.location.href = pageName;
         }
     }
+
+    // Остальной код account.js остается без изменений...
     
     showUserMenu() {
         this.showNotification('Меню пользователя', 'info');

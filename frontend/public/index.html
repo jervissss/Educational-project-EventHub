@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EventHub - Главная</title>
+    <!-- Основные стили для всего сайта -->
     <link rel="stylesheet" href="../src/css/style.css">
+    <!-- Современный шрифт Montserrat - выглядит профессионально -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Главная шапка сайта с баннером -->
     <header>
+        <!-- Большой баннер на всю ширину -->
         <div class="banner">
+            <!-- Временно используем одно изображение, позже будет слайдер -->
             <img src="../src/assets/images/content/BackBanner.png" alt="Banner" width="1920" height="665">
         </div>
         
-        <!-- Стрелки на баннере -->
+        <!-- Стрелки для слайдера (будут работать с JavaScript) -->
         <button class="arrow left-arrow">
             <img src="../src/assets/icons/left-arrow.png" alt="Предыдущее">
         </button>
@@ -21,7 +26,7 @@
             <img src="../src/assets/icons/right-arrow.png" alt="Следующее">
         </button>
 
-        <!-- Индикаторы баннера -->
+        <!-- Индикаторы слайдов - точки показывают прогресс -->
         <div class="banner-indicators">
             <div class="indicator active"></div>
             <div class="indicator"></div>
@@ -29,19 +34,21 @@
             <div class="indicator"></div>
         </div>
         
-        <!-- Текст слева на баннере -->
+        <!-- Текст на баннере слева -->
         <div class="banner-text">
             <div class="event">EVENT</div>
             <div class="hub">HUB</div>
         </div>
         
-        <!-- Новый блок - текст и кнопка справа -->
+        <!-- Контент на баннере справа -->
         <div class="banner-right-content">
             <p class="banner-description">Откройте для себя лучшие мероприятия вокруг! Создавайте, продвигайте и продавайте билеты на ваши события с EventHub</p>
             <button class="book-button">Забронировать</button>
         </div>
         
+        <!-- Основная навигация и логотип поверх баннера -->
         <div class="header-content">
+            <!-- Логотип компании -->
             <div class="logo-container">
                 <img src="../src/assets/images/logos/logo.png" alt="EventHub Logo" width="111px">
                 <div class="logo-text">
@@ -50,60 +57,68 @@
                 </div> 
             </div>
             
-            <!-- В разделе навигации заменяем существующий блок: -->
-<div class="nav">
-    <button class="nav-but curr" data-page="index.html">Главная</button>
-    <button class="nav-but" data-page="events.html">Мероприятия</button>
-    <button class="nav-but" data-page="account.html">Кабинет</button>
-    <button class="nav-but" data-page="community.html">Сообщество</button>
-    <button class="nav-but" data-page="about.html">О нас</button>
-</div>
+            <!-- Навигационное меню -->
+            <div class="nav">
+                <!-- Главная страница активна -->
+                <button class="nav-but curr" data-page="index.html">Главная</button>
+                <button class="nav-but" data-page="events.html">Мероприятия</button>
+                <button class="nav-but" data-page="account.html">Кабинет</button>
+                <button class="nav-but" data-page="community.html">Сообщество</button>
+                <button class="nav-but" data-page="about.html">О нас</button>
+            </div>
             
+            <!-- Кнопка регистрации -->
             <div class="register">
                 <button class="reg-button">Зарегистрироваться</button>
             </div>
         </div>
     </header>
     
+    <!-- Основное содержимое страницы -->
     <main>
+        <!-- Секция "О нас" -->
         <section class="content-section">
             <div class="content-container">
                 <h2 class="about-title">О НАС</h2>
+                <!-- Обертка для звезд и текста -->
                 <div class="stars-wrapper">
+                    <!-- Декоративная звезда слева -->
                     <img src="../src/assets/images/decorations/star1.png" alt="Звезда слева" class="star left-star">
+                    <!-- Основной текст о компании -->
                     <div class="about-content">
                         <p class="about-description">Откройте для себя лучшие мероприятия вокруг! Создавайте, продвигайте и продавайте билеты на ваши события с EventHub</p>
                     </div>
+                    <!-- Декоративная звезда справа -->
                     <img src="../src/assets/images/decorations/star2.png" alt="Звезда справа" class="star right-star">
                 </div>
             </div>
-
-            <!-- Наклонные полосы ВНУТРИ серой секции -->
-            <div class="diagonal-stripes">
-                <img src="../src/assets/images/decorations/frame.png" class="stripe stripe-1" alt="">
-                <img src="../src/assets/images/decorations/frame.png" class="stripe stripe-2" alt="">
-            </div>
+            
+            <!-- Здесь раньше были наклонные полосы, но заказчик попросил убрать их для более чистого дизайна -->
         </section>
     </main>
     
-    <!-- Секция ПРОЕКТЫ -->
+    <!-- Секция с проектами/мероприятиями -->
     <section class="projects-section">
         <div class="content-container">
             <h2 class="projects-title">ПРОЕКТЫ</h2>
         </div>
+        <!-- Контейнер для карточек проектов -->
         <div class="projects-container">
-            <!-- Карточка 1 -->
+            <!-- Карточка проекта 1 -->
             <div class="project-card">
                 <div class="card-image">
+                    <!-- Изображение проекта -->
                     <img src="../src/assets/images/content/BackBanner.png" alt="Проект 1">
                 </div>
                 <div class="card-content">
                     <div>
                         <h3 class="card-title">Название проекта</h3>
+                        <!-- Теги проекта -->
                         <div class="card-tags">
                             <span class="tag">#тег</span>
                             <span class="tag">#тег</span>
                         </div>
+                        <!-- Описание проекта -->
                         <p class="card-description">
                             Откройте для себя лучшие мероприятия вокруг!<br>
                             Создавайте, продвигайте и продавайте билеты на ваши события с EventHub
@@ -112,7 +127,7 @@
                 </div>
             </div>
 
-            <!-- Карточка 2 -->
+            <!-- Карточка проекта 2 -->
             <div class="project-card">
                 <div class="card-image">
                     <img src="../src/assets/images/content/BackBanner.png" alt="Проект 2">
@@ -132,7 +147,7 @@
                 </div>
             </div>
 
-            <!-- Карточка 3 -->
+            <!-- Карточка проекта 3 -->
             <div class="project-card">
                 <div class="card-image">
                     <img src="../src/assets/images/content/BackBanner.png" alt="Проект 3">
@@ -154,7 +169,7 @@
         </div>
     </section>
 
-    <!-- Новая секция с логотипом -->
+    <!-- Простой футер с логотипом -->
     <section class="logo-line-section">
         <div class="logo-line-container">
             <div class="logo-line-image">
@@ -164,6 +179,7 @@
         </div>
     </section>
 
+    <!-- Подключаем основной JavaScript файл -->
     <script src="../src/js/main.js"></script>
 </body>
 </html>

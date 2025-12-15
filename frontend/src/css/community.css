@@ -157,33 +157,32 @@ header {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    /* Добавляем для правильного отображения текста */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    /* Важно для центрирования текста */
+    text-align: center;
+    line-height: 1;
+    white-space: nowrap;
+    padding: 0;
 }
 
-.nav-but::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
-}
-
-.nav-but:hover::before {
-    left: 100%;
-}
-
+/* Стиль для состояния наведения */
 .nav-but:hover {
     background-color: rgba(255, 255, 255, 0.15);
     transform: translateY(-2px);
+    text-decoration: none;
 }
 
+/* Стиль для текущей страницы */
 .nav-but.curr {
     background-color: white;
     color: #333232;
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
     animation: pulse 2s infinite;
+    text-decoration: none;
 }
 
 /* ===== КНОПКА РЕГИСТРАЦИИ ===== */

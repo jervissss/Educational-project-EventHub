@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Личный кабинет - EventHub</title>
+    <!-- Стили для личного кабинета -->
     <link rel="stylesheet" href="../src/css/account.css">
+    <!-- Тот же шрифт для консистентности -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Шапка аналогична другим страницам -->
     <header>
         <div class="banner">
             <img src="../src/assets/images/content/BackBanner.png" alt="Banner" width="1920" height="665">
@@ -22,15 +25,16 @@
                 </div> 
             </div>
             
-            <!-- В разделе навигации заменяем существующий блок: -->
-<div class="nav">
-    <button class="nav-but" data-page="../index.html">Главная</button>
-    <button class="nav-but" data-page="events.html">Мероприятия</button>
-    <button class="nav-but curr" data-page="account.html">Кабинет</button>
-    <button class="nav-but" data-page="community.html">Сообщество</button>
-    <button class="nav-but" data-page="about.html">О нас</button>
-</div>
+            <!-- Навигация - текущая страница "Кабинет" -->
+            <div class="nav">
+                <button class="nav-but" data-page="index.html">Главная</button>
+                <button class="nav-but" data-page="events.html">Мероприятия</button>
+                <button class="nav-but curr" data-page="account.html">Кабинет</button>
+                <button class="nav-but" data-page="community.html">Сообщество</button>
+                <button class="nav-but" data-page="about.html">О нас</button>
+            </div>
             
+            <!-- Вместо кнопки регистрации теперь отображается аватар и имя пользователя -->
             <div class="user-menu">
                 <div class="user-avatar">
                     <img src="../src/assets/images/content/BackBanner.png" alt="Аватар пользователя">
@@ -41,6 +45,7 @@
     </header>
 
     <main>
+        <!-- Заголовок личного кабинета -->
         <section class="account-hero">
             <div class="account-container">
                 <h1 class="account-title">ЛИЧНЫЙ КАБИНЕТ</h1>
@@ -48,10 +53,11 @@
             </div>
         </section>
 
+        <!-- Основной контент с боковым меню -->
         <section class="account-content">
             <div class="account-container">
                 <div class="account-layout">
-                    <!-- Боковое меню -->
+                    <!-- Боковая панель с навигацией -->
                     <aside class="sidebar">
                         <nav class="sidebar-nav">
                             <button class="nav-item" data-tab="community">
@@ -80,6 +86,7 @@
                             </button>
                         </nav>
 
+                        <!-- Быстрая статистика в боковой панели -->
                         <div class="sidebar-stats">
                             <div class="stat-item">
                                 <div class="stat-number">12</div>
@@ -96,10 +103,9 @@
                         </div>
                     </aside>
 
-                    <!-- Основной контент -->
+                    <!-- Основная область контента с вкладками -->
                     <div class="main-content">
-                        <!-- Вкладка Профиль -->
-
+                        <!-- Вкладка Сообщество -->
                         <div class="tab-content" id="community">
     <div class="tab-header">
         <h2>Мое сообщество</h2>
@@ -144,6 +150,7 @@
     </div>
 </div>
 
+                        <!-- Вкладка Профиль (активная по умолчанию) -->
                         <div class="tab-content active" id="profile">
                             <div class="profile-header">
                                 <div class="profile-avatar">
@@ -164,6 +171,7 @@
                             </div>
 
                             <div class="profile-details">
+                                <!-- Контактная информация -->
                                 <div class="detail-card">
                                     <h3>Контактная информация</h3>
                                     <div class="detail-item">
@@ -180,6 +188,7 @@
                                     </div>
                                 </div>
 
+                                <!-- Предпочтения пользователя -->
                                 <div class="detail-card">
                                     <h3>Предпочтения</h3>
                                     <div class="preferences">
@@ -190,6 +199,7 @@
                                     </div>
                                 </div>
 
+                                <!-- Статистика активности -->
                                 <div class="detail-card">
                                     <h3>Статистика</h3>
                                     <div class="stats-grid">
@@ -217,12 +227,14 @@
                                 <button class="create-event-btn">Создать мероприятие</button>
                             </div>
 
+                            <!-- Вкладки для фильтрации мероприятий -->
                             <div class="events-tabs">
                                 <button class="event-tab active" data-event-type="upcoming">Предстоящие</button>
                                 <button class="event-tab" data-event-type="past">Прошедшие</button>
                                 <button class="event-tab" data-event-type="drafts">Черновики</button>
                             </div>
 
+                            <!-- Список мероприятий -->
                             <div class="events-list">
                                 <div class="event-item" data-event-type="upcoming">
                                     <div class="event-image">
@@ -293,6 +305,7 @@
                                 <button class="download-all-btn">Скачать все</button>
                             </div>
 
+                            <!-- Фильтры для билетов -->
                             <div class="tickets-filter">
                                 <button class="filter-btn active" data-ticket-filter="all">Все билеты</button>
                                 <button class="filter-btn" data-ticket-filter="active">Активные</button>
@@ -300,6 +313,7 @@
                                 <button class="filter-btn" data-ticket-filter="cancelled">Отмененные</button>
                             </div>
 
+                            <!-- Список билетов -->
                             <div class="tickets-list">
                                 <div class="ticket-card active" data-ticket-status="active">
                                     <div class="ticket-header">
@@ -377,6 +391,7 @@
                             </div>
 
                             <div class="settings-sections">
+                                <!-- Настройки безопасности -->
                                 <div class="settings-section">
                                     <h3>Безопасность</h3>
                                     <div class="setting-item">
@@ -395,6 +410,7 @@
                                     </div>
                                 </div>
 
+                                <!-- Настройки уведомлений -->
                                 <div class="settings-section">
                                     <h3>Уведомления</h3>
                                     <div class="setting-item">
@@ -419,6 +435,7 @@
                                     </div>
                                 </div>
 
+                                <!-- Настройки приватности -->
                                 <div class="settings-section">
                                     <h3>Приватность</h3>
                                     <div class="setting-item">
@@ -451,6 +468,7 @@
                                 <h2>Создать мероприятие</h2>
                             </div>
 
+                            <!-- Форма создания мероприятия -->
                             <form class="create-event-form" id="createEventForm">
                                 <div class="form-section">
                                     <h3>Основная информация</h3>
@@ -501,6 +519,7 @@
                                     </div>
                                 </div>
 
+                                <!-- Настройка билетов -->
                                 <div class="form-section">
                                     <h3>Билеты</h3>
                                     <div class="ticket-types" id="ticketTypes">
@@ -524,6 +543,7 @@
                                     <button type="button" class="add-ticket-type" id="addTicketType">+ Добавить тип билета</button>
                                 </div>
 
+                                <!-- Кнопки действий формы -->
                                 <div class="form-actions">
                                     <button type="button" class="save-draft-btn">Сохранить черновик</button>
                                     <button type="submit" class="publish-event-btn">Опубликовать мероприятие</button>
@@ -536,7 +556,7 @@
         </section>
     </main>
 
-    <!-- Секция с логотипом -->
+    <!-- Футер с логотипом -->
     <section class="logo-line-section">
         <div class="logo-line-container">
             <div class="logo-line-image">
@@ -546,6 +566,7 @@
         </div>
     </section>
 
+    <!-- JavaScript для личного кабинета -->
     <script src="../src/js/account.js"></script>
 </body>
 </html>

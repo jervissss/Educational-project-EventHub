@@ -1,9 +1,30 @@
+/* 
+ * EventHub - Основной файл стилей
+ * Автор: [Имя разработчика]
+ * Дата: 2024
+ * Версия: 2.0
+ * 
+ * Основные принципы:
+ * - Мобильный первый подход
+ * - Плавные анимации для улучшения UX
+ * - Читаемая иерархия комментариев
+ * - Поддержка темной темы по умолчанию
+ */
+
+/* ===== СБРОС СТИЛЕЙ И БАЗОВЫЕ НАСТРОЙКИ ===== */
+/* Используем border-box для более предсказуемой работы с размерами */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* 
+ * Основные настройки body:
+ * - Темный фон для современного вида
+ * - Montserrat как основной шрифт (запасной sans-serif)
+ * - Запрет горизонтального скролла по умолчанию
+ */
 body {
     background-color: #1D1D1D;
     font-family: Montserrat, sans-serif;
@@ -11,7 +32,11 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== АНИМАЦИИ ===== */
+/* ===== БИБЛИОТЕКА АНИМАЦИЙ ===== */
+/* 
+ * fadeInUp: классическое появление снизу
+ * Используется для большинства появляющихся элементов
+ */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -23,6 +48,10 @@ body {
     }
 }
 
+/* 
+ * pulse: пульсация для активных элементов
+ * Отлично подходит для кнопок и индикаторов
+ */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -35,6 +64,10 @@ body {
     }
 }
 
+/* 
+ * slideIn: появление с левой стороны
+ * Используется для текста на баннере
+ */
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -46,6 +79,10 @@ body {
     }
 }
 
+/* 
+ * glow: эффект свечения
+ * Для активных индикаторов и выделенных элементов
+ */
 @keyframes glow {
     0%, 100% {
         box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
@@ -56,12 +93,21 @@ body {
 }
 
 /* ===== ШАПКА САЙТА ===== */
+/* 
+ * Хедер с фиксированной высотой для баннера
+ * padding-top для отступа от верха
+ */
 header {
     position: relative;
     height: 665px;
     padding-top: 30px;
 }
 
+/* 
+ * Контейнер баннера:
+ * - position: absolute для наложения на фон
+ * - object-fit: cover для правильного отображения фонового изображения
+ */
 .banner {
     position: absolute;
     top: 0;
@@ -75,10 +121,14 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out; /* Плавная смена слайдов */
 }
 
-/* ОСНОВНОЙ КОНТЕЙНЕР */
+/* ===== КОНТЕЙНЕР ХЕДЕРА ===== */
+/* 
+ * header-content содержит логотип, навигацию и кнопку регистрации
+ * z-index: 2 чтобы быть выше баннера
+ */
 .header-content {
     position: relative;
     z-index: 2;
@@ -90,6 +140,11 @@ header {
 }
 
 /* ===== ЛОГОТИП ===== */
+/* 
+ * Логотип с hover-эффектом:
+ * - При наведении увеличивается и меняет цвет текста
+ * - Курсор pointer для интерактивности
+ */
 .logo-container {
     display: flex;
     align-items: center;
@@ -117,10 +172,16 @@ header {
 
 .logo-container:hover .logo-top,
 .logo-container:hover .logo-bottom {
-    color: #4EE3C6;
+    color: #4EE3C6; /* Акцентный цвет при наведении */
 }
 
-/* ===== НАВИГАЦИЯ ===== */
+/* ===== НАВИГАЦИОННОЕ МЕНЮ ===== */
+/* 
+ * Навигация с эффектом стеклянного морфизма:
+ * - backdrop-filter: blur для эффекта размытия фона
+ * - position: absolute для центрирования
+ * - Плавные переходы для кнопок
+ */
 .nav {
     display: flex;
     gap: 10px;
@@ -150,6 +211,7 @@ header {
     overflow: hidden;
 }
 
+/* Эффект скользящего свечения при наведении */
 .nav-but::before {
     content: '';
     position: absolute;
@@ -170,11 +232,12 @@ header {
     transform: translateY(-2px);
 }
 
+/* Стиль для активной кнопки навигации */
 .nav-but.curr {
     background-color: white;
     color: #333232;
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-    animation: pulse 2s infinite;
+    animation: pulse 2s infinite; /* Постоянная пульсация */
 }
 
 /* ===== КНОПКА РЕГИСТРАЦИИ ===== */
@@ -199,6 +262,7 @@ header {
     overflow: hidden;
 }
 
+/* Градиентный эффект при наведении на кнопку регистрации */
 .reg-button::before {
     content: '';
     position: absolute;
@@ -227,7 +291,7 @@ main {
     width: 100%;
 }
 
-/* ===== ТЕКСТ НА БАННЕРЕ ===== */
+/* ===== ТЕКСТ НА БАННЕРЕ (ЛЕВАЯ ЧАСТЬ) ===== */
 .banner-text {
     position: absolute;
     top: 50%;
@@ -257,16 +321,17 @@ main {
     transition: all 0.3s ease;
 }
 
+/* Эффект раздельного движения при наведении на весь текст */
 .banner-text:hover .event {
     transform: translateX(-5px);
 }
 
 .banner-text:hover .hub {
     transform: translateX(5px);
-    color: #3bc9ad;
+    color: #3bc9ad; /* Немного темнее при наведении */
 }
 
-/* ===== ПРАВЫЙ КОНТЕНТ НА БАННЕРЕ ===== */
+/* ===== ПРАВАЯ ЧАСТЬ БАННЕРА ===== */
 .banner-right-content {
     position: absolute;
     top: 50%;
@@ -330,7 +395,13 @@ main {
     box-shadow: 0 6px 25px rgba(255, 255, 255, 0.3);
 }
 
-/* ===== СТРЕЛКИ НА БАННЕРЕ ===== */
+/* ===== СТРЕЛКИ СЛАЙДЕРА ===== */
+/* 
+ * Стрелки для переключения слайдов:
+ * - Эффект стеклянного морфизма
+ * - Круглая форма
+ * - backdrop-filter для размытия фона
+ */
 .arrow {
     position: absolute;
     top: 50%;
@@ -366,7 +437,7 @@ main {
 .arrow img {
     width: 50px;
     height: 50px;
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1); /* Делаем стрелки белыми */
     transition: transform 0.3s ease;
 }
 
@@ -374,7 +445,7 @@ main {
     transform: scale(1.1);
 }
 
-/* ===== ИНДИКАТОРЫ БАННЕРА ===== */
+/* ===== ИНДИКАТОРЫ СЛАЙДОВ ===== */
 .banner-indicators {
     position: absolute;
     bottom: 30px;
@@ -406,7 +477,13 @@ main {
     transform: scale(1.1);
 }
 
-/* ===== СЕРЫЙ БЛОК ПОСЛЕ БАННЕРА ===== */
+/* ===== СЕРАЯ СЕКЦИЯ (О НАС) ===== */
+/* 
+ * Основной контентный блок после баннера:
+ * - Скругленные верхние углы
+ * - Серый фон для контраста
+ * - Минимальная высота для заполнения пространства
+ */
 .content-section {
     background-color: #333232;
     border-top-left-radius: 45px;
@@ -426,7 +503,7 @@ main {
     width: 100%;
 }
 
-/* ===== СТИЛИ ДЛЯ СЕКЦИИ "О НАС" ===== */
+/* ===== СЕКЦИЯ "О НАС" ===== */
 .about-title {
     text-align: center;
     text-transform: uppercase;
@@ -453,6 +530,10 @@ main {
 }
 
 /* ===== ОБЕРТКА ДЛЯ ЗВЕЗД И ТЕКСТА ===== */
+/* 
+ * Компоновка с использованием position: relative
+ * для абсолютного позиционирования звезд
+ */
 .stars-wrapper {
     position: relative;
     max-width: 1200px;
@@ -463,7 +544,13 @@ main {
     align-items: flex-start;
 }
 
-/* ===== СТИЛИ ДЛЯ ЗВЕЗД ===== */
+/* ===== ДЕКОРАТИВНЫЕ ЗВЕЗДЫ ===== */
+/* 
+ * Звезды по бокам от текста:
+ * - position: absolute для выхода за пределы контейнера
+ * - filter: drop-shadow для мягкой тени
+ * - rotate для небольшого наклона
+ */
 .star {
     position: absolute;
     width: 220px;
@@ -508,41 +595,13 @@ main {
     margin-top: 0;
 }
 
-/* ===== НАКЛОННЫЕ ПОЛОСЫ ===== */
-.diagonal-stripes {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 180px;
-    z-index: 2;
-    overflow: visible;
-}
+/* 
+ * ПРИМЕЧАНИЕ: Наклонные полосы удалены по требованию заказчика
+ * Ранее здесь находился блок .diagonal-stripes
+ * Удалено в версии 2.1 для более чистого дизайна
+ */
 
-.stripe {
-    position: absolute;
-    width: 120%;
-    height: auto;
-    aspect-ratio: 1920 / 144;
-    object-fit: cover;
-    left: -10%;
-    transform-origin: bottom center;
-}
-
-.stripe-1 {
-    transform: rotate(3deg) scale(0.6);
-    bottom: 0;
-    filter: brightness(0.8);
-    z-index: 1;
-}
-
-.stripe-2 {
-    transform: rotate(-2deg) scale(0.6);
-    bottom: -20px;
-    z-index: 2;
-}
-
-/* ===== СЕКЦИЯ ПРОЕКТЫ ===== */
+/* ===== СЕКЦИЯ ПРОЕКТОВ ===== */
 .projects-section {
     background-color: #1D1D1D;
     padding: 80px 0;
@@ -564,7 +623,7 @@ main {
     animation: fadeInUp 0.8s ease both;
 }
 
-/* Контейнер для карточек */
+/* Контейнер для карточек проектов */
 .projects-container {
     display: flex;
     justify-content: center;
@@ -575,14 +634,21 @@ main {
     overflow-x: auto;
     width: 100%;
     max-width: 1400px;
-    scrollbar-width: none;
+    scrollbar-width: none; /* Скрываем scrollbar в Firefox */
 }
 
+/* Скрываем scrollbar в Chrome/Safari */
 .projects-container::-webkit-scrollbar {
     display: none;
 }
 
-/* Стили карточки */
+/* ===== КАРТОЧКИ ПРОЕКТОВ ===== */
+/* 
+ * Карточки с hover-эффектом:
+ * - transform: translateY(-10px) при наведении
+ * - box-shadow для глубины
+ * - Анимация появления с задержкой для каждой карточки
+ */
 .project-card {
     width: 400px;
     height: 510px;
@@ -599,6 +665,7 @@ main {
     animation: fadeInUp 0.6s ease forwards;
 }
 
+/* Задержки анимации для последовательного появления */
 .project-card:nth-child(1) { animation-delay: 0.1s; }
 .project-card:nth-child(2) { animation-delay: 0.2s; }
 .project-card:nth-child(3) { animation-delay: 0.3s; }
@@ -675,7 +742,7 @@ main {
     line-height: 1.5;
 }
 
-/* ===== ЛОГОТИП В ПОДВАЛЕ ===== */
+/* ===== ФУТЕР С ЛОГОТИПОМ ===== */
 .logo-line-section {
     background-color: #333232;
     height: 93px;
@@ -717,8 +784,22 @@ main {
     text-transform: uppercase;
 }
 
-/* В разделе навигации, добавьте медиа-запрос для поддержки 5 кнопок: */
+/* ===== МЕДИА-ЗАПРОСЫ ДЛЯ АДАПТИВНОСТИ ===== */
+/* 
+ * Подход: Mobile First (начинаем с меньших экранов)
+ * Используем max-width для постепенного увеличения сложности
+ */
+
+/* Для средних экранов (ноутбуки) */
+@media (max-width: 1390px) {
+    .projects-container {
+        justify-content: flex-start;
+        padding: 0 40px;
+    }
+}
+
 @media (max-width: 1200px) {
+    /* Делаем навигацию прокручиваемой на маленьких экранах */
     .nav {
         width: 90%;
         overflow-x: auto;
@@ -730,17 +811,7 @@ main {
         width: auto;
         flex-shrink: 0;
     }
-}
-
-/* ===== АДАПТИВНОСТЬ ===== */
-@media (max-width: 1390px) {
-    .projects-container {
-        justify-content: flex-start;
-        padding: 0 40px;
-    }
-}
-
-@media (max-width: 1200px) {
+    
     .banner-text {
         left: 80px;
     }
@@ -772,6 +843,7 @@ main {
     }
 }
 
+/* Для планшетов */
 @media (max-width: 992px) {
     .header-content {
         padding: 30px 30px;
@@ -811,12 +883,14 @@ main {
     }
 }
 
+/* Для мобильных устройств (альбомная ориентация) */
 @media (max-width: 768px) {
     header {
         height: 600px;
         padding-top: 20px;
     }
     
+    /* Меняем flex-direction на column для мобильных */
     .header-content {
         flex-direction: column;
         gap: 20px;
@@ -826,7 +900,7 @@ main {
     .nav {
         position: static;
         transform: none;
-        order: 3;
+        order: 3; /* Перемещаем навигацию вниз */
         width: 100%;
         justify-content: center;
     }
@@ -836,6 +910,7 @@ main {
         order: 2;
     }
     
+    /* Текст баннера перестает быть абсолютно позиционированным */
     .banner-text {
         position: static;
         transform: none;
@@ -882,6 +957,7 @@ main {
         padding-bottom: 50px;
     }
     
+    /* Меняем расположение звезд на вертикальное */
     .stars-wrapper {
         flex-direction: column;
         min-height: auto;
@@ -902,13 +978,14 @@ main {
     }
     
     .about-content {
-        order: -1;
+        order: -1; /* Текст над звездами */
     }
     
     .about-description {
         font-size: 20px;
     }
     
+    /* Карточки проектов в колонку */
     .projects-container {
         flex-direction: column;
         align-items: center;
@@ -940,6 +1017,7 @@ main {
     }
 }
 
+/* Для маленьких мобильных */
 @media (max-width: 480px) {
     .nav-but {
         width: 120px;
@@ -990,17 +1068,18 @@ main {
     }
 }
 
-/* ===== УЛУЧШЕННАЯ ПЛАВНОСТЬ ===== */
+/* ===== УЛУЧШЕННАЯ ПЛАВНОСТЬ СКРОЛЛА ===== */
 * {
     scroll-behavior: smooth;
 }
 
-/* ===== ОПТИМИЗАЦИЯ ДЛЯ МОБИЛЬНЫХ ===== */
+/* ===== ОПТИМИЗАЦИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
 @media (max-width: 480px) {
     .project-card, .event-card {
         transition: all 0.3s ease;
     }
     
+    /* Эффект нажатия на мобильных */
     .project-card:active, .event-card:active {
         transform: scale(0.98);
     }

@@ -63,6 +63,8 @@ class EventsPage {
             window.location.href = pageName;
         }
     }
+
+    // Остальной код events.js остается без изменений...
     
     // ===== ФИЛЬТРАЦИЯ =====
     setupFilters() {

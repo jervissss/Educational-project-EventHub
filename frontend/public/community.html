@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Сообщество EventHub - объединяем людей через общие события и интересы">
     <title>Сообщество - EventHub</title>
+    <!-- Специальные стили для страницы сообщества -->
     <link rel="stylesheet" href="../src/css/community.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="../src/assets/images/logos/logo.png" type="image/png">
 </head>
 <body>
+    <!-- Шапка с улучшенной доступностью -->
     <header role="banner">
         <div class="banner">
             <img src="../src/assets/images/content/BackBanner.png" alt="Сообщество EventHub - люди общаются на мероприятии" width="1920" height="665">
         </div>
         
         <div class="header-content">
+            <!-- Логотип с ролью ссылки для доступности -->
             <div class="logo-container" role="link" tabindex="0" aria-label="Вернуться на главную страницу EventHub">
                 <img src="../src/assets/images/logos/logo.png" alt="Логотип EventHub" width="111" height="62">
                 <div class="logo-text">
@@ -24,12 +27,14 @@
                 </div> 
             </div>
             
+            <!-- Навигация с ARIA атрибутами -->
             <nav class="nav" role="navigation" aria-label="Основная навигация">
-                <a href="../index.html" class="nav-but">Главная</a>
-                <a href="events.html" class="nav-but">Мероприятия</a>
-                <a href="account.html" class="nav-but">Кабинет</a>
-                <a href="community.html" class="nav-but curr" aria-current="page">Сообщество</a>
-                <a href="about.html" class="nav-but">О нас</a>
+                <button class="nav-but" data-page="index.html">Главная</button>
+                <button class="nav-but" data-page="events.html">Мероприятия</button>
+                <button class="nav-but" data-page="account.html">Кабинет</button>
+                <!-- Текущая страница сообщества -->
+                <button class="nav-but curr" data-page="community.html" aria-current="page">Сообщество</button>
+                <button class="nav-but" data-page="about.html">О нас</button>
             </nav>
             
             <div class="register">
@@ -38,12 +43,15 @@
         </div>
     </header>
 
+    <!-- Основное содержимое -->
     <main role="main">
+        <!-- Герой-секция сообщества -->
         <section class="community-hero" aria-labelledby="community-title">
             <div class="community-container">
                 <h1 id="community-title" class="community-title">СООБЩЕСТВО EVENTHUB</h1>
                 <p class="community-subtitle">Объединяем людей через общие события и интересы</p>
                 
+                <!-- Статистика сообщества с анимацией счетчиков -->
                 <div class="hero-stats" role="region" aria-label="Статистика сообщества">
                     <div class="stat-item">
                         <div class="stat-number" data-count="10000" aria-live="polite">0</div>
@@ -65,6 +73,7 @@
             </div>
         </section>
 
+        <!-- Возможности сообщества -->
         <section class="features-section" aria-labelledby="features-title">
             <div class="community-container">
                 <h2 id="features-title" class="section-title">Уникальные возможности сообщества</h2>
@@ -88,6 +97,7 @@
             </div>
         </section>
 
+        <!-- Секция нетворкинга -->
         <section class="networking-section" aria-labelledby="networking-title">
             <div class="community-container">
                 <div class="section-header">
@@ -95,6 +105,7 @@
                     <p>Система подберет для вас наиболее подходящих участников на основе ваших интересов</p>
                 </div>
                 
+                <!-- Фильтр по интересам -->
                 <div class="interests-filter" role="group" aria-label="Фильтр по интересам">
                     <button class="interest-tag active" aria-pressed="true">Все</button>
                     <button class="interest-tag" aria-pressed="false">Концерты</button>
@@ -107,6 +118,7 @@
                     <button class="interest-tag" aria-pressed="false">Путешествия</button>
                 </div>
 
+                <!-- Статистика совпадений -->
                 <div class="matching-stats">
                     <div class="match-card">
                         <div class="match-percentage" aria-live="polite">85%</div>
@@ -117,6 +129,7 @@
                     </div>
                 </div>
 
+                <!-- Сетка с потенциальными знакомыми -->
                 <div class="people-grid" id="peopleGrid">
                     <article class="person-card">
                         <div class="person-avatar">
@@ -192,10 +205,12 @@
             </div>
         </section>
 
+        <!-- Ленты мероприятий для общения -->
         <section class="activity-feeds-section" aria-labelledby="activity-title">
             <div class="community-container">
                 <h2 id="activity-title" class="section-title">Живые ленты ваших мероприятий</h2>
                 
+                <!-- Табы для переключения между лентами -->
                 <div class="feeds-tabs" role="tablist" aria-label="Фильтр лент мероприятий">
                     <button class="feed-tab active" data-feed="all" role="tab" aria-selected="true" aria-controls="all-feeds">Все ленты</button>
                     <button class="feed-tab" data-feed="upcoming" role="tab" aria-selected="false" aria-controls="upcoming-feeds">Предстоящие</button>
@@ -203,6 +218,7 @@
                     <button class="feed-tab" data-feed="past" role="tab" aria-selected="false" aria-controls="past-feeds">Архив</button>
                 </div>
 
+                <!-- Контейнер с лентами -->
                 <div class="feeds-container">
                     <article class="event-feed active" id="all-feeds" role="tabpanel" aria-labelledby="all-feeds-tab">
                         <div class="feed-header">
@@ -217,6 +233,7 @@
                             <button class="join-feed-btn" aria-label="Присоединиться к обсуждению конференции">Присоединиться к обсуждению</button>
                         </div>
 
+                        <!-- Сообщения в ленте -->
                         <div class="feed-content">
                             <div class="feed-message">
                                 <div class="message-avatar">
@@ -256,6 +273,7 @@
                                 </div>
                             </div>
 
+                            <!-- Поле для нового сообщения -->
                             <div class="new-message-box">
                                 <label for="message-input" class="visually-hidden">Напишите сообщение</label>
                                 <textarea id="message-input" placeholder="Напишите сообщение для участников мероприятия..." rows="2" aria-label="Поле для ввода сообщения"></textarea>
@@ -264,6 +282,7 @@
                         </div>
                     </article>
 
+                    <!-- Другие ленты (скрыты по умолчанию) -->
                     <article class="event-feed" id="upcoming-feeds" role="tabpanel" aria-labelledby="upcoming-feeds-tab" hidden>
                         <div class="feed-header">
                             <div class="feed-event-info">
@@ -281,6 +300,7 @@
             </div>
         </section>
 
+        <!-- Визуализация интересов пользователя -->
         <section class="interests-timeline-section" aria-labelledby="timeline-title">
             <div class="community-container">
                 <div class="section-header">
@@ -288,6 +308,7 @@
                     <p>Визуализация вашего путешествия по миру мероприятий</p>
                 </div>
 
+                <!-- Таймлайн с интересами -->
                 <div class="timeline-container">
                     <div class="timeline-nav">
                         <button class="timeline-nav-btn prev" aria-label="Предыдущий период">←</button>
@@ -295,6 +316,7 @@
                         <button class="timeline-nav-btn next" aria-label="Следующий период">→</button>
                     </div>
 
+                    <!-- Визуализация таймлайна -->
                     <div class="timeline-visualization">
                         <div class="timeline-node active" data-month="янв" role="button" tabindex="0" aria-label="Январь: 2 мероприятия">
                             <div class="node-circle"></div>
@@ -326,6 +348,7 @@
                         </div>
                     </div>
 
+                    <!-- Статистика интересов -->
                     <div class="interests-stats">
                         <div class="interest-stat">
                             <div class="stat-value" aria-live="polite">24</div>
@@ -342,6 +365,7 @@
                     </div>
                 </div>
 
+                <!-- Рекомендации на основе интересов -->
                 <div class="recommendations-box">
                     <h3>На основе ваших интересов мы рекомендуем:</h3>
                     <div class="recommendations-list">
@@ -362,11 +386,13 @@
             </div>
         </section>
 
+        <!-- Тематические сообщества -->
         <section class="communities-section" aria-labelledby="communities-title">
             <div class="community-container">
                 <h2 id="communities-title" class="section-title">Тематические комьюнити</h2>
                 
                 <div class="communities-grid">
+                    <!-- Сообщество Технологии и IT -->
                     <article class="community-card">
                         <div class="community-header">
                             <h3>Технологии и IT</h3>
@@ -384,6 +410,7 @@
                         <button class="join-community-btn" aria-label="Вступить в сообщество Технологии и IT">Вступить</button>
                     </article>
 
+                    <!-- Сообщество Искусство и культура -->
                     <article class="community-card">
                         <div class="community-header">
                             <h3>Искусство и культура</h3>
@@ -401,6 +428,7 @@
                         <button class="join-community-btn" aria-label="Вступить в сообщество Искусство и культура">Вступить</button>
                     </article>
 
+                    <!-- Сообщество Спорт и активный отдых -->
                     <article class="community-card">
                         <div class="community-header">
                             <h3>Спорт и активный отдых</h3>
@@ -422,6 +450,7 @@
         </section>
     </main>
 
+    <!-- Футер -->
     <footer class="logo-line-section" role="contentinfo">
         <div class="logo-line-container" role="link" tabindex="0" aria-label="Вернуться на главную страницу EventHub">
             <div class="logo-line-image">
@@ -431,6 +460,7 @@
         </div>
     </footer>
 
+    <!-- JavaScript для сообщества -->
     <script src="../src/js/community.js"></script>
 </body>
 </html>

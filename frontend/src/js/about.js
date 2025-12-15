@@ -52,6 +52,8 @@ class AboutPage {
         }
     }
 
+    // Остальной код about.js остается без изменений...
+
     showRegistrationModal() {
         this.showNotification('Функция регистрации будет доступна скоро!', 'info');
     }

@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог мероприятий - EventHub</title>
+    <!-- Подключаем стили для этой страницы -->
     <link rel="stylesheet" href="../src/css/events.css">
+    <!-- Используем красивый современный шрифт -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Шапка сайта с баннером -->
     <header>
         <div class="banner">
+            <!-- Заглушка для баннера - в реальном проекте здесь будет слайдер или видео -->
             <img src="../src/assets/images/content/BackBanner.png" alt="Banner" width="1920" height="665">
         </div>
         
+        <!-- Контент шапки поверх баннера -->
         <div class="header-content">
+            <!-- Логотип компании -->
             <div class="logo-container">
                 <img src="../src/assets/images/logos/logo.png" alt="EventHub Logo" width="111px">
                 <div class="logo-text">
@@ -22,28 +28,34 @@
                 </div> 
             </div>
             
-            <!-- В разделе навигации заменяем существующий блок: -->
-<div class="nav">
-    <button class="nav-but" data-page="../index.html">Главная</button>
-    <button class="nav-but curr" data-page="events.html">Мероприятия</button>
-    <button class="nav-but" data-page="account.html">Кабинет</button>
-    <button class="nav-but" data-page="community.html">Сообщество</button>
-    <button class="nav-but" data-page="about.html">О нас</button>
-</div>
+            <!-- Основная навигация по сайту -->
+            <div class="nav">
+                <button class="nav-but" data-page="index.html">Главная</button>
+                <!-- Текущая страница помечена классом curr -->
+                <button class="nav-but curr" data-page="events.html">Мероприятия</button>
+                <button class="nav-but" data-page="account.html">Кабинет</button>
+                <button class="nav-but" data-page="community.html">Сообщество</button>
+                <button class="nav-but" data-page="about.html">О нас</button>
+            </div>
             
+            <!-- Кнопка регистрации/входа -->
             <div class="register">
                 <button class="reg-button">Зарегистрироваться</button>
             </div>
         </div>
     </header>
 
+    <!-- Основное содержимое страницы -->
     <main>
+        <!-- Герой-секция с заголовком и фильтрами -->
         <section class="events-hero">
             <div class="events-container">
                 <h1 class="events-title">КАТАЛОГ МЕРОПРИЯТИЙ</h1>
                 <p class="events-subtitle">Откройте для себя уникальные события вокруг вас</p>
                 
+                <!-- Секция с поиском и фильтрами -->
                 <div class="filters-section">
+                    <!-- Поисковая строка -->
                     <div class="search-bar">
                         <input type="text" placeholder="Поиск мероприятий..." class="search-input">
                         <button class="search-button">
@@ -51,6 +63,7 @@
                         </button>
                     </div>
                     
+                    <!-- Фильтры по категориям -->
                     <div class="filter-tags">
                         <button class="filter-tag active" data-category="all">Все</button>
                         <button class="filter-tag" data-category="concert">Концерты</button>
@@ -63,13 +76,16 @@
             </div>
         </section>
 
+        <!-- Сетка с карточками мероприятий -->
         <section class="events-grid-section">
             <div class="events-container">
+                <!-- Контейнер для карточек -->
                 <div class="events-grid" id="eventsGrid">
                     <!-- Карточка мероприятия 1 -->
                     <div class="event-card" data-category="concert">
                         <div class="event-image">
                             <img src="../src/assets/images/content/BackBanner.png" alt="Концерт классической музыки">
+                            <!-- Дата мероприятия поверх изображения -->
                             <div class="event-date">
                                 <span class="date-day">15</span>
                                 <span class="date-month">Дек</span>
@@ -77,6 +93,7 @@
                         </div>
                         <div class="event-content">
                             <h3 class="event-title">Концерт классической музыки</h3>
+                            <!-- Детали мероприятия: дата, место, цена -->
                             <div class="event-info">
                                 <div class="info-item">
                                     <img src="../src/assets/icons/calendar.png" alt="Дата" width="16" height="16">
@@ -95,6 +112,7 @@
                                 Незабываемый вечер классической музыки в исполнении симфонического оркестра. 
                                 В программе произведения Моцарта, Бетховена и Чайковского.
                             </p>
+                            <!-- Кнопки действий -->
                             <div class="event-actions">
                                 <button class="book-event-button">Забронировать</button>
                                 <button class="more-info-button">Подробнее</button>
@@ -283,6 +301,7 @@
                     </div>
                 </div>
 
+                <!-- Кнопка загрузки дополнительных мероприятий -->
                 <div class="load-more-container">
                     <button class="load-more-button" id="loadMoreButton">Показать еще</button>
                 </div>
@@ -290,7 +309,7 @@
         </section>
     </main>
 
-    <!-- Секция с логотипом -->
+    <!-- Футер с логотипом (такой же на всех страницах) -->
     <section class="logo-line-section">
         <div class="logo-line-container">
             <div class="logo-line-image">
@@ -300,6 +319,7 @@
         </div>
     </section>
 
+    <!-- Подключаем JavaScript для этой страницы -->
     <script src="../src/js/events.js"></script>
 </body>
 </html>
